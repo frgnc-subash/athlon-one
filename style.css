@@ -5,8 +5,9 @@
 }
 body {
   background-color: black;
+  font-family: "Tilt Neon", sans-serif;
 }
-h1{
+h1 {
   color: aliceblue;
 }
 .hero-container {
@@ -23,7 +24,7 @@ h1{
 }
 
 #logo img {
-  height: 50px; /* adjust as needed */
+  height: 50px;
 }
 
 .btn {
