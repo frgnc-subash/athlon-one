@@ -1,4 +1,3 @@
-// Counter animation for stats
 function animateCounter(elementId, finalValue, duration) {
   let startTime = null;
   const element = document.getElementById(elementId);
@@ -37,3 +36,13 @@ const observer = new IntersectionObserver(
 );
 
 observer.observe(document.querySelector(".stats"));
+
+const header = document.getElementById("mainHeader");
+
+window.addEventListener("scroll", function () {
+  if (window.scrollY > 50) {
+    header.classList.add("scrolled");
+  } else {
+    header.classList.remove("scrolled");
+  }
+});

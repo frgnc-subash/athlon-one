@@ -487,6 +487,15 @@ body {
     font-size: 1.8rem;
   }
 
+  .logo a {
+    text-decoration: none; /* removes the underline */
+    color: inherit; /* keeps the button text color */
+    display: flex; /* ensures the span and icon stay aligned */
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+  }
   .login-form h2 {
     font-size: 1.5rem;
   }

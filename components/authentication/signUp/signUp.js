@@ -32,7 +32,6 @@ let formData = {
   terms: false,
 };
 
-// Toggle Password Visibility
 togglePasswordIcons.forEach((icon) => {
   icon.addEventListener("click", function () {
     const input = this.parentElement.querySelector("input");
