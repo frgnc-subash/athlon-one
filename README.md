@@ -1,5 +1,8 @@
 # ATHLON-ONE 
 :] Preview here: <a href="https://athlon-one.vercel.app">athlon-one</a>
+
+---
+
 A modern, responsive fitness platform designed for athletes to track progress and achieve fitness goals.
 
 ## Features
