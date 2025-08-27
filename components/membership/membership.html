@@ -11,25 +11,11 @@
   <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
   <title>ATHLON-ONE | Membership</title>
   <link rel="stylesheet" href="membership.css">
+  <link rel="stylesheet" href="/components/navbar/navBar.css">
 </head>
 
 <body>
-  <header id="mainHeader">
-    <div id="logo">
-      <a href="/index.html">
-        <img src="/assets/logo.png" alt="ATHLON-ONE Logo">
-      </a>
-    </div>
-    <nav class="nav-links">
-      <a href="/index.html">Home</a>
-      <a href="#">Features</a>
-      <a href="/components/membership/membership.html" class="active">Membership</a>
-      <a href="#">About</a>
-      <a href="/components/contact/contact.html">Contact</a>
-      <a href="/components/events/events.html">Events</a>
-    </nav>
-  </header>
-
+  <div id="navbar-container"></div>
   <div class="membership-hero">
     <div class="hero-content">
       <h1>ATHLON <span style="color: rgb(0, 255, 0)">MEMBERSHIP</span></h1>
@@ -219,19 +205,32 @@
         <a href="#"><i class="fab fa-youtube"></i></a>
       </div>
       <div class="footer-links">
-        <a href="/index.html">Home</a>
+        <!-- <a href="/index.html">Home</a>
         <a href="#">Features</a>
         <a href="/components/membership/membership.html">Membership</a>
         <a href="#">About</a>
         <a href="/components/contact/contact.html">Contact</a>
-        <a href="/components/events/events.html">Events</a>
+        <a href="/components/events/events.html">Events</a> -->
         <a href="#">Privacy Policy</a>
         <a href="#">Terms of Service</a>
       </div>
       <p class="copyright">© 2023 ATHLON-ONE. All rights reserved.</p>
+      <div align="center"> Made with ❤️ by the ATHLON-ONE team </div>
     </div>
   </footer>
+  <script>
+    // Load navbar HTML
+    fetch("/components/navbar/navBar.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("navbar-container").innerHTML = data;
 
+        // Attach navbar highlight logic
+        const script = document.createElement("script");
+        script.src = "/components/navbar/navBar.js";
+        document.body.appendChild(script);
+      });
+  </script>
   <script src="membership.js"></script>
 </body>
 
