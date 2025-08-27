@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/components/events/events.css">
+  <title>ATHLON-ONE | Events</title>
+</head>
+
+<body>
+  <header id="mainHeader">
+    <div id="logo">
+      <a href="#">
+        <img src="/assets/logo.png" alt="ATHLON-ONE Logo">
+      </a>
+    </div>
+    <nav class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">Features</a>
+      <a href="#">Pricing</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+      <a href="#">Events</a>
+    </nav>
+  </header>
+
+  <div class="events-hero" id="eventsHero">
+    <div class="hero-content">
+      <h1>ATHLON <span style="color: rgb(0, 255, 0)">EVENTS</span></h1>
+      <p>Join our competitive sports events and challenges to test your skills and connect with fellow athletes.</p>
+      <a href="#" class="btn">View Upcoming Events</a>
+    </div>
+  </div>
+
+  <section class="events-container">
+    <h2 class="section-title">Upcoming <span>Events</span></h2>
+    
+    <div class="events-filter">
+      <button class="filter-btn active" data-filter="all">All Events</button>
+      <button class="filter-btn" data-filter="swimming">Swimming</button>
+      <button class="filter-btn" data-filter="football">Football</button>
+      <button class="filter-btn" data-filter="basketball">Basketball</button>
+      <button class="filter-btn" data-filter="volleyball">Volleyball</button>
+      <button class="filter-btn" data-filter="badminton">Badminton</button>
+      <button class="filter-btn" data-filter="cricket">Cricket</button>
+    </div>
+
+    <div class="events-grid">
+      <!-- Swimming Event -->
+      <div class="event-card" data-category="swimming">
+        <img src="/assets/swimming.webp" alt="Swimming Competition" class="event-image">
+        <div class="event-content">
+          <div class="event-date">June 15, 2023 | 9:00 AM</div>
+          <h3 class="event-title">City Swimming Championship</h3>
+          <span class="event-sport">Swimming</span>
+          <div class="event-location">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>City Aquatic Center</span>
+          </div>
+          <p class="event-description">Compete in various swimming disciplines. Open to all age groups and skill levels.</p>
+          <div class="event-actions">
+            <a href="#" class="btn-event">Register Now</a>
+            <a href="#" class="btn-event btn-outline">Details</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Football Event -->
+      <div class="event-card" data-category="football">
+        <img src="/assets/football.avif" alt="Football Tournament" class="event-image">
+        <div class="event-content">
+          <div class="event-date">June 18, 2023 | 2:00 PM</div>
+          <h3 class="event-title">Summer Football Tournament</h3>
+          <span class="event-sport">Football</span>
+          <div class="event-location">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>City Sports Complex</span>
+          </div>
+          <p class="event-description">5-a-side tournament with prizes for the winning team. Register your team today!</p>
+          <div class="event-actions">
+            <a href="#" class="btn-event">Register Now</a>
+            <a href="#" class="btn-event btn-outline">Details</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Basketball Event -->
+      <div class="event-card" data-category="basketball">
+        <img src="/assets/basketball.avif" alt="Basketball Championship" class="event-image">
+        <div class="event-content">
+          <div class="event-date">June 22, 2023 | 5:00 PM</div>
+          <h3 class="event-title">Street Basketball Championship</h3>
+          <span class="event-sport">Basketball</span>
+          <div class="event-location">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Downtown Courts</span>
+          </div>
+          <p class="event-description">3x3 street basketball tournament. Show off your skills and compete for prizes.</p>
+          <div class="event-actions">
+            <a href="#" class="btn-event">Register Now</a>
+            <a href="#" class="btn-event btn-outline">Details</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Volleyball Event -->
+      <div class="event-card" data-category="volleyball">
+        <img src="/assets/volleyball.avif" alt="Beach Volleyball" class="event-image">
+        <div class="event-content">
+          <div class="event-date">June 25, 2023 | 10:00 AM</div>
+          <h3 class="event-title">Beach Volleyball Tournament</h3>
+          <span class="event-sport">Volleyball</span>
+          <div class="event-location">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Sunset Beach</span>
+          </div>
+          <p class="event-description">Enjoy a day of sun, sand, and competitive beach volleyball. Teams of 2.</p>
+          <div class="event-actions">
+            <a href="#" class="btn-event">Register Now</a>
+            <a href="#" class="btn-event btn-outline">Details</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Badminton Event -->
+      <div class="event-card" data-category="badminton">
+        <img src="/assets/badminton.jpg" alt="Badminton Tournament" class="event-image">
+        <div class="event-content">
+          <div class="event-date">July 2, 2023 | 11:00 AM</div>
+          <h3 class="event-title">Regional Badminton Tournament</h3>
+          <span class="event-sport">Badminton</span>
+          <div class="event-location">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Regional Sports Center</span>
+          </div>
+          <p class="event-description">Singles and doubles tournaments. Various skill categories available.</p>
+          <div class="event-actions">
+            <a href="#" class="btn-event">Register Now</a>
+            <a href="#" class="btn-event btn-outline">Details</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cricket Event -->
+      <div class="event-card" data-category="cricket">
+        <img src="/assets/cricket.webp" alt="Cricket Match" class="event-image">
+        <div class="event-content">
+          <div class="event-date">July 10, 2023 | 1:00 PM</div>
+          <h3 class="event-title">T20 Cricket League</h3>
+          <span class="event-sport">Cricket</span>
+          <div class="event-location">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>City Cricket Ground</span>
+          </div>
+          <p class="event-description">Join our T20 cricket league. Teams and individual players welcome.</p>
+          <div class="event-actions">
+            <a href="#" class="btn-event">Register Now</a>
+            <a href="#" class="btn-event btn-outline">Details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Can't Find What You're Looking For?</h2>
+    <p>Suggest new events or create your own custom challenge for our community.</p>
+    <a href="/components/contact/contact.html" class="btn">Propose an Event</a>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+      <div class="footer-links">
+        <a href="#">Home</a>
+        <a href="#">Features</a>
+        <a href="#">Pricing</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <a href="#">Events</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+      <p class="copyright">© 2023 ATHLON-ONE. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+<script src="/components/events/events.js"></script>
+</html>
