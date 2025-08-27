@@ -8,7 +8,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<<<<<<< HEAD
   <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
   <title>ATHLON-ONE | Membership</title>
   <link rel="stylesheet" href="membership.css">
@@ -20,32 +19,6 @@
       <a href="/index.html">
         <img src="/assets/logo.png" alt="ATHLON-ONE Logo">
       </a>
-=======
-  <link rel="stylesheet" href="/components/membership/membership.css">
-  <title>Membership Plans | ATHLON ONE</title>
-</head>
-
-<body>
-  <!-- Membership Header -->
-  <section class="membership-header">
-    <h1>Membership Plans</h1>
-    <p>Choose the plan that best fits your training needs.</p>
-  </section>
-
-  <!-- Pricing Section -->
-  <section class="pricing">
-    <div class="plan">
-      <h2>Basic</h2>
-      <p class="price">Rs.500 <span>/month</span></p>
-      <ul>
-        <li>✔ Unlimited reads</li>
-        <li>✔ Subscription-free articles</li>
-        <li>✔ Daily unique custom symbols</li>
-        <li>✔ More than 100 categories free</li>
-        <li>✔ Personal student support</li>
-      </ul>
-      <button class="choose-btn" data-plan="Basic">Choose</button>
->>>>>>> f5451c58879ccb9c5a94b81db31d489ce82385e3
     </div>
     <nav class="nav-links">
       <a href="/index.html">Home</a>
@@ -57,7 +30,6 @@
     </nav>
   </header>
 
-<<<<<<< HEAD
   <div class="membership-hero">
     <div class="hero-content">
       <h1>ATHLON <span style="color: rgb(0, 255, 0)">MEMBERSHIP</span></h1>
@@ -238,170 +210,6 @@
     </div>
   </section>
 
-=======
-    <div class="plan popular">
-      <h2>Popular</h2>
-      <p class="price">Rs.1000 <span>/month</span></p>
-      <ul>
-        <li>✔ Copyright free material</li>
-        <li>✔ Custom public profile page</li>
-        <li>✔ "Pro" symbol near profile</li>
-        <li>✔ Adding extra rates to posts</li>
-        <li>✔ 5 free monthly "Basic" subs</li>
-        <li>+ Basic Plan</li>
-      </ul>
-      <button class="choose-btn" data-plan="Popular">Choose</button>
-    </div>
-
-    <div class="plan">
-      <h2>Agency</h2>
-      <p class="price">Rs.1500 <span>/month</span></p>
-      <ul>
-        <li>✔ VIP Newsletters</li>
-        <li>✔ Team public profile page</li>
-        <li>✔ Up to 5 members of your team</li>
-        <li>✔ Connection to other sub-teams</li>
-        <li>✔ Unlimited reviews</li>
-        <li>✔ Includes Basic & Popular plan</li>
-      </ul>
-      <button class="choose-btn" data-plan="Agency">Choose</button>
-    </div>
-  </section>
-
-  <!-- Popup Registration Form -->
-  <div id="formModal" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <h2>Register for Membership</h2>
-      <form id="registerForm" enctype="multipart/form-data">
-        <label for="plan">Selected Plan</label>
-        <input type="text" id="plan" name="plan" readonly>
-
-        <label for="name">Full Name</label>
-        <input type="text" id="name" name="name" required>
-
-        <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" name="phone">
-
-        <!-- Payment Method -->
-        <label for="payment">Payment Method</label>
-        <select id="payment" name="payment" required>
-          <option value="">-- Select --</option>
-          <option value="edigital">eSewa</option>
-          <option value="khalti">Khalti</option>
-          <option value="qr">BANK QR</option>
-          <option value="card">Dollar Card</option>
-        </select>
-
-        <!-- eSewa Payment -->
-        <div id="esewaField" class="payment-field">
-          <div class="payment-instructions">
-            <h3>Payment Instructions</h3>
-            <ol>
-              <li>Scan the QR code below using your eSewa app</li>
-              <li>Enter the amount according to your selected plan</li>
-              <li>Complete the payment</li>
-              <li>Upload a screenshot of the transaction confirmation</li>
-            </ol>
-          </div>
-          
-          <div class="qr-code">
-            <p>Scan this QR code with eSewa:</p>
-            <img src="/assets/esewa.jpg" alt="eSewa QR Code">
-          </div>
-          
-          <label for="esewaTxn">Transaction ID</label>
-          <input type="text" id="esewaTxn" name="esewaTxn" placeholder="Enter transaction ID"><br>
-          
-          <label for="esewaScreenshot">Upload Transaction Screenshot</label>
-          <input type="file" id="esewaScreenshot" name="esewaScreenshot" accept="image/*" required>
-        </div>
-
-        <!-- Khalti Payment -->
-        <div id="khaltiField" class="payment-field">
-          <div class="payment-instructions">
-            <h3>Payment Instructions</h3>
-            <ol>
-              <li>Scan the QR code below using your Khalti app</li>
-              <li>Enter the amount according to your selected plan</li>
-              <li>Complete the payment</li>
-              <li>Upload a screenshot of the transaction confirmation</li>
-            </ol>
-          </div>
-          
-          <div class="qr-code">
-            <p>Scan this QR code with Khalti:</p>
-            <img src="/assets/khalti.jpg" alt="Khalti QR Code">
-          </div>
-          
-          <label for="khaltiTxn">Transaction ID</label>
-          <input type="text" id="khaltiTxn" name="khaltiTxn" placeholder="Enter transaction ID"><br>
-          
-          <label for="khaltiScreenshot">Upload Transaction Screenshot</label>
-          <input type="file" id="khaltiScreenshot" name="khaltiScreenshot" accept="image/*" required>
-        </div>
-
-        <!-- BANK QR Payment -->
-        <div id="qrField" class="payment-field">
-          <div class="payment-instructions">
-            <h3>Payment Instructions</h3>
-            <ol>
-              <li>Use your banking app to scan the QR code below</li>
-              <li>Enter the amount according to your selected plan</li>
-              <li>Complete the payment</li>
-              <li>Upload a screenshot of the transaction confirmation</li>
-            </ol>
-          </div>
-          
-          <div class="qr-code">
-            <p>Scan this QR code with your banking app:</p>
-            <img src="/assets/bank.jpg" alt="Bank QR Code">
-          </div>
-          
-          <label for="bankTxn">Transaction ID</label>
-          <input type="text" id="bankTxn" name="bankTxn" placeholder="Enter transaction ID"><br>
-
-          <label for="bankScreenshot">Upload Transaction Screenshot</label>
-          <input type="file" id="bankScreenshot" name="bankScreenshot" accept="image/*" required>
-        </div>
-
-        <!-- Card Payment -->
-        <div id="cardField" class="payment-field">
-          <div class="payment-instructions">
-            <h3>Payment Instructions</h3>
-            <ol>
-              <li>Use the card details below to make payment</li>
-              <li>Enter the amount according to your selected plan</li>
-              <li>Complete the payment</li>
-              <li>Upload a screenshot of the transaction confirmation</li>
-            </ol>
-          </div>
-          
-          <div class="qr-code">
-            <p>Our Dollar Card Details:</p>
-            <div style="background: #1a1a1a; padding: 15px; border-radius: 8px; text-align: left; margin: 15px 0;">
-              <p><strong>Card Number:</strong> XXXX XXXX XXXX 1234</p>
-              <p><strong>Name:</strong> ATHLON ONE</p>
-              <p><strong>Expiry:</strong> 12/2025</p>
-              <p><strong>CVV:</strong> ***</p>
-            </div>
-          </div>
-          
-          <label for="cardTxn">Transaction ID</label>
-          <input type="text" id="cardTxn" name="cardTxn" placeholder="Enter transaction ID"><br>
-          
-          <label for="cardScreenshot">Upload Transaction Screenshot</label>
-          <input type="file" id="cardScreenshot" name="cardScreenshot" accept="image/*" required>
-        </div>
-
-        <button type="submit">Submit</button>
-      </form>
-    </div>
-  </div>
->>>>>>> f5451c58879ccb9c5a94b81db31d489ce82385e3
   <footer>
     <div class="footer-content">
       <div class="social-links">
@@ -411,32 +219,20 @@
         <a href="#"><i class="fab fa-youtube"></i></a>
       </div>
       <div class="footer-links">
-<<<<<<< HEAD
         <a href="/index.html">Home</a>
         <a href="#">Features</a>
         <a href="/components/membership/membership.html">Membership</a>
         <a href="#">About</a>
         <a href="/components/contact/contact.html">Contact</a>
         <a href="/components/events/events.html">Events</a>
-=======
-        <a href="#">Home</a>
-        <a href="#">Features</a>
-        <a href="#">Pricing</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-        <a href="#">Events</a>
->>>>>>> f5451c58879ccb9c5a94b81db31d489ce82385e3
         <a href="#">Privacy Policy</a>
         <a href="#">Terms of Service</a>
       </div>
       <p class="copyright">© 2023 ATHLON-ONE. All rights reserved.</p>
     </div>
   </footer>
-<<<<<<< HEAD
 
   <script src="membership.js"></script>
-=======
->>>>>>> f5451c58879ccb9c5a94b81db31d489ce82385e3
 </body>
-<script src="/components/membership/membership.js"></script>
+
 </html>
