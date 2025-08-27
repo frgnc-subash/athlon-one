@@ -9,14 +9,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
   <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="membership.css">
-  <link rel="stylesheet" href="/components/navbar/navBar.css">
+  <link rel="stylesheet" href="/components/membership/membership.css">
   <title>Membership Plans | ATHLON ONE</title>
 </head>
 
 <body>
   <!-- Membership Header -->
-  <div id="navbar-container"></div>
   <section class="membership-header">
     <h1>Membership Plans</h1>
     <p>Choose the plan that best fits your training needs.</p>
@@ -43,9 +41,9 @@
       <ul>
         <li>✔ Copyright free material</li>
         <li>✔ Custom public profile page</li>
-        <li>✔ “Pro” symbol near profile</li>
+        <li>✔ "Pro" symbol near profile</li>
         <li>✔ Adding extra rates to posts</li>
-        <li>✔ 5 free monthly “Basic” subs</li>
+        <li>✔ 5 free monthly "Basic" subs</li>
         <li>+ Basic Plan</li>
       </ul>
       <button class="choose-btn" data-plan="Popular">Choose</button>
@@ -88,103 +86,138 @@
         <label for="payment">Payment Method</label>
         <select id="payment" name="payment" required>
           <option value="">-- Select --</option>
-          <option value="edigital">eSewa </option>
+          <option value="edigital">eSewa</option>
           <option value="khalti">Khalti</option>
-          <option value="qr">QR Upload</option>
+          <option value="qr">BANK QR</option>
           <option value="card">Dollar Card</option>
-
-
         </select>
 
-        <!--esewa-->
+        <!-- eSewa Payment -->
         <div id="esewaField" class="payment-field">
-          <label for="esewaNumber">esewa Number</label>
-          <input type="text" id="esewaNumber" name="esewaNumber" placeholder="esewa Number"><br <label
-            for="esewaTxn">Transaction ID</label>
-          <input type="text" id="esewaTxn" name="esewaTxn" placeholder="Transaction ID"><br>
-
-          <label for="esewaAmount">Transaction Amount</label>
-          <input type="text" id="esewaAmount" name="esewaAmount" placeholder="Transaction Amount"><br>
-
-          <label for="esewaRem">Remarks</label>
-          <input type="text" id="esewaRem" name="esewaRem" placeholder="Remarks"><br>
-
-          <label for="esewaDate">Transaction Date</label>
-          <input type="date" id="esewaDate" name="esewaDate"><br>
-
-          <label for="confirmEsawa">Confirm Payment</label>
-          <input type="password" id="confirmEsawa" name="confirmEsawa" maxlength="4" placeholder="***">
+          <div class="payment-instructions">
+            <h3>Payment Instructions</h3>
+            <ol>
+              <li>Scan the QR code below using your eSewa app</li>
+              <li>Enter the amount according to your selected plan</li>
+              <li>Complete the payment</li>
+              <li>Upload a screenshot of the transaction confirmation</li>
+            </ol>
+          </div>
+          
+          <div class="qr-code">
+            <p>Scan this QR code with eSewa:</p>
+            <img src="/assets/esewa.jpg" alt="eSewa QR Code">
+          </div>
+          
+          <label for="esewaTxn">Transaction ID</label>
+          <input type="text" id="esewaTxn" name="esewaTxn" placeholder="Enter transaction ID"><br>
+          
+          <label for="esewaScreenshot">Upload Transaction Screenshot</label>
+          <input type="file" id="esewaScreenshot" name="esewaScreenshot" accept="image/*" required>
         </div>
 
+        <!-- Khalti Payment -->
         <div id="khaltiField" class="payment-field">
-          <label for="khaltiNumber">Khalti Number</label>
-          <input type="text" id="khaltiNumber" name="khaltiNumber" placeholder="Khalti Number"><br>
-
+          <div class="payment-instructions">
+            <h3>Payment Instructions</h3>
+            <ol>
+              <li>Scan the QR code below using your Khalti app</li>
+              <li>Enter the amount according to your selected plan</li>
+              <li>Complete the payment</li>
+              <li>Upload a screenshot of the transaction confirmation</li>
+            </ol>
+          </div>
+          
+          <div class="qr-code">
+            <p>Scan this QR code with Khalti:</p>
+            <img src="/assets/khalti.jpg" alt="Khalti QR Code">
+          </div>
+          
           <label for="khaltiTxn">Transaction ID</label>
-          <input type="text" id="khaltiTxn" name="khaltiTxn" placeholder="Transaction ID"><br>
-
-          <label for="khaltiAmount">Transaction Amount</label>
-          <input type="text" id="khaltiAmount" name="khaltiAmount" placeholder="Transaction Amount"><br>
-
-          <label for="khaltiRem">Remarks</label>
-          <input type="text" id="khaltiRem" name="khaltiRem" placeholder="Remarks"><br>
-
-          <label for="khaltiDate">Transaction Date</label>
-          <input type="date" id="khaltiDate" name="khaltiDate"><br>
-
-          <label for="confirmKhalti">Confirm Payment</label>
-          <input type="password" id="confirmKhalti" name="confirmKhalti" maxlength="4" placeholder="***">
+          <input type="text" id="khaltiTxn" name="khaltiTxn" placeholder="Enter transaction ID"><br>
+          
+          <label for="khaltiScreenshot">Upload Transaction Screenshot</label>
+          <input type="file" id="khaltiScreenshot" name="khaltiScreenshot" accept="image/*" required>
         </div>
-        <!-- QR Upload -->
+
+        <!-- BANK QR Payment -->
         <div id="qrField" class="payment-field">
-          <label for="qrUpload">Upload QR Code</label>
-          <input type="file" id="qrUpload" name="qrUpload" accept="image/*">
+          <div class="payment-instructions">
+            <h3>Payment Instructions</h3>
+            <ol>
+              <li>Use your banking app to scan the QR code below</li>
+              <li>Enter the amount according to your selected plan</li>
+              <li>Complete the payment</li>
+              <li>Upload a screenshot of the transaction confirmation</li>
+            </ol>
+          </div>
+          
+          <div class="qr-code">
+            <p>Scan this QR code with your banking app:</p>
+            <img src="/assets/bank.jpg" alt="Bank QR Code">
+          </div>
+          
+          <label for="bankTxn">Transaction ID</label>
+          <input type="text" id="bankTxn" name="bankTxn" placeholder="Enter transaction ID"><br>
+
+          <label for="bankScreenshot">Upload Transaction Screenshot</label>
+          <input type="file" id="bankScreenshot" name="bankScreenshot" accept="image/*" required>
         </div>
 
         <!-- Card Payment -->
         <div id="cardField" class="payment-field">
-          <label for="cardNumber">Card Number</label>
-          <input type="text" id="cardNumber" name="cardNumber" maxlength="16" placeholder="1234 5678 9012 3456"><br>
-
-          <label for="cardHolder">Card Holder Name</label>
-          <input type="text" id="cardHolder" name="cardHolder" placeholder="Card Holder Name"><br>
-
-          <label for="amount">Transaction Amount</label>
-          <input type="text" id="amount" name="amount" placeholder="Transaction Amount"><br>
-
-          <label for="remarks">Remarks</label>
-          <input type="text" id="remarks" name="remarks" placeholder="Remarks"><br>
-
-          <label for="cardType">Card Type</label>
-          <select id="cardType" name="cardType">
-            <option value="visa">Visa</option>
-            <option value="mastercard">MasterCard</option>
-            <option value="amex">American Express</option>
-          </select><br>
-
-          <label for="expiry">Expiry Date</label>
-          <input type="month" id="expiry" name="expiry"><br>
-
-          <label for="cvv">CVV</label>
-          <input type="password" id="cvv" name="cvv" maxlength="4" placeholder="***">
+          <div class="payment-instructions">
+            <h3>Payment Instructions</h3>
+            <ol>
+              <li>Use the card details below to make payment</li>
+              <li>Enter the amount according to your selected plan</li>
+              <li>Complete the payment</li>
+              <li>Upload a screenshot of the transaction confirmation</li>
+            </ol>
+          </div>
+          
+          <div class="qr-code">
+            <p>Our Dollar Card Details:</p>
+            <div style="background: #1a1a1a; padding: 15px; border-radius: 8px; text-align: left; margin: 15px 0;">
+              <p><strong>Card Number:</strong> XXXX XXXX XXXX 1234</p>
+              <p><strong>Name:</strong> ATHLON ONE</p>
+              <p><strong>Expiry:</strong> 12/2025</p>
+              <p><strong>CVV:</strong> ***</p>
+            </div>
+          </div>
+          
+          <label for="cardTxn">Transaction ID</label>
+          <input type="text" id="cardTxn" name="cardTxn" placeholder="Enter transaction ID"><br>
+          
+          <label for="cardScreenshot">Upload Transaction Screenshot</label>
+          <input type="file" id="cardScreenshot" name="cardScreenshot" accept="image/*" required>
         </div>
+
         <button type="submit">Submit</button>
       </form>
     </div>
   </div>
-  <script>
-    fetch("/components/navbar/navBar.html")
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById("navbar-container").innerHTML = data;
-
-        // Attach navbar highlight logic
-        const script = document.createElement("script");
-        script.src = "/components/navbar/navBar.js";
-        document.body.appendChild(script);
-      });
-  </script>
-  <script src="membership.js"></script>
+  <footer>
+    <div class="footer-content">
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+      <div class="footer-links">
+        <a href="#">Home</a>
+        <a href="#">Features</a>
+        <a href="#">Pricing</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <a href="#">Events</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+      <p class="copyright">© 2023 ATHLON-ONE. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
-
+<script src="/components/membership/membership.js"></script>
 </html>
