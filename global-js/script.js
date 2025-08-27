@@ -46,3 +46,14 @@ window.addEventListener("scroll", function () {
     header.classList.remove("scrolled");
   }
 });
+
+// dynamic navbar
+fetch("/components/navbar/navBar.html")
+  .then((response) => response.text())
+  .then((data) => {
+    document.getElementById("navbar-container").innerHTML = data;
+    // after inserting navbar, load navbar.js
+    const script = document.createElement("script");
+    script.src = "/components/navbar/navBar.js";
+    document.body.appendChild(script);
+  });
