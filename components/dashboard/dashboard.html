@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="dashboard-styles.css">
+    <title>ATHLON-ONE Dashboard</title>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="dashboard-header">
+        <div class="header-left">
+            <div class="logo">
+                <div class="logo-icon">A</div>
+                <span>ATHLON-ONE</span>
+            </div>
+        </div>
+        <div class="header-center">
+            <h2>Welcome, <span id="userName">John</span></h2>
+        </div>
+        <div class="header-right">
+            <div class="profile-section">
+                <i class="fas fa-user-circle profile-icon"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active" data-section="dashboard">
+                    <i class="fas fa-home"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#" class="nav-item" data-section="sports">
+                    <i class="fas fa-trophy"></i>
+                    <span>My Sports</span>
+                </a>
+                <a href="#" class="nav-item" data-section="events">
+                    <i class="fas fa-calendar"></i>
+                    <span>Events & Tournaments</span>
+                </a>
+                <a href="#" class="nav-item" data-section="news">
+                    <i class="fas fa-newspaper"></i>
+                    <span>News & Updates</span>
+                </a>
+                <a href="#" class="nav-item" data-section="performance">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Performance/Stats</span>
+                </a>
+                <a href="#" class="nav-item" data-section="settings">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="content-section active">
+                <!-- Quick Overview Cards -->
+                <div class="overview-section">
+                    <h3>Quick Overview</h3>
+                    <div class="overview-grid">
+                        <div class="overview-card">
+                            <div class="card-icon">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                            <div class="card-content">
+                                <h4>Upcoming Matches</h4>
+                                <span class="card-number" id="upcomingMatches">3</span>
+                            </div>
+                        </div>
+                        <div class="overview-card">
+                            <div class="card-icon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <div class="card-content">
+                                <h4>Registered Sports</h4>
+                                <span class="card-number" id="registeredSports">5</span>
+                            </div>
+                        </div>
+                        <div class="overview-card">
+                            <div class="card-icon">
+                                <i class="fas fa-medal"></i>
+                            </div>
+                            <div class="card-content">
+                                <h4>Achievements</h4>
+                                <span class="card-number" id="achievements">12</span>
+                            </div>
+                        </div>
+                        <div class="overview-card">
+                            <div class="card-icon">
+                                <i class="fas fa-bell"></i>
+                            </div>
+                            <div class="card-content">
+                                <h4>Notifications</h4>
+                                <span class="card-number" id="notifications">7</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- My Events Section -->
+                <div class="dashboard-section">
+                    <div class="section-card">
+                        <h3>My Events</h3>
+                        <div class="events-list">
+                            <div class="event-item">
+                                <div class="event-accent"></div>
+                                <div class="event-info">
+                                    <h4>Basketball Tournament</h4>
+                                    <p>March 15, 2024 - 10:00 AM</p>
+                                </div>
+                                <div class="event-actions">
+                                    <button class="btn-secondary view-details-btn"
+                                        data-event="basketball-tournament">View Details</button>
+                                    <button class="btn-primary join-btn">Join</button>
+                                </div>
+                            </div>
+                            <div class="event-item">
+                                <div class="event-accent"></div>
+                                <div class="event-info">
+                                    <h4>Swimming Championship</h4>
+                                    <p>March 20, 2024 - 2:00 PM</p>
+                                </div>
+                                <div class="event-actions">
+                                    <button class="btn-secondary view-details-btn"
+                                        data-event="swimming-championship">View Details</button>
+                                    <button class="btn-primary join-btn">Join</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Performance Analytics Section -->
+                <div class="dashboard-section">
+                    <div class="section-card">
+                        <h3>Performance Analytics</h3>
+                        <div class="analytics-grid">
+                            <div class="metric-card">
+                                <div class="metric-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="metric-content">
+                                    <h4>Training Hours</h4>
+                                    <div class="metric-value" id="dashboardTrainingHours">156</div>
+                                    <div class="metric-change positive">+12% this month</div>
+                                </div>
+                            </div>
+
+                            <div class="metric-card">
+                                <div class="metric-icon">
+                                    <i class="fas fa-fire"></i>
+                                </div>
+                                <div class="metric-content">
+                                    <h4>Calories Burned</h4>
+                                    <div class="metric-value" id="dashboardCalories">12,450</div>
+                                    <div class="metric-change positive">+8% this week</div>
+                                </div>
+                            </div>
+
+                            <div class="metric-card">
+                                <div class="metric-icon">
+                                    <i class="fas fa-trophy"></i>
+                                </div>
+                                <div class="metric-content">
+                                    <h4>Personal Records</h4>
+                                    <div class="metric-value" id="dashboardRecords">23</div>
+                                    <div class="metric-change positive">+3 new records</div>
+                                </div>
+                            </div>
+
+                            <div class="metric-card">
+                                <div class="metric-icon">
+                                    <i class="fas fa-heartbeat"></i>
+                                </div>
+                                <div class="metric-content">
+                                    <h4>Avg Heart Rate</h4>
+                                    <div class="metric-value" id="dashboardHeartRate">142</div>
+                                    <div class="metric-change neutral">BPM - Optimal</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- My Sports Section -->
+            <section id="sports" class="content-section">
+                <h2>My Sports</h2>
+                <div class="sports-grid">
+                    <div class="sport-card">
+                        <i class="fas fa-basketball-ball"></i>
+                        <h3>Basketball</h3>
+                        <p>Level: Advanced</p>
+                        <div class="sport-stats">
+                            <div class="stat-item">
+                                <span class="stat-label">Games Played</span>
+                                <span class="stat-value">24</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Win Rate</span>
+                                <span class="stat-value">78%</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Best Score</span>
+                                <span class="stat-value">42 pts</span>
+                            </div>
+                        </div>
+                        <button class="btn-primary sport-details-btn" data-sport="basketball">View Details</button>
+                    </div>
+                    <div class="sport-card">
+                        <i class="fas fa-swimmer"></i>
+                        <h3>Swimming</h3>
+                        <p>Level: Intermediate</p>
+                        <div class="sport-stats">
+                            <div class="stat-item">
+                                <span class="stat-label">Sessions</span>
+                                <span class="stat-value">18</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Distance</span>
+                                <span class="stat-value">45km</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Best Time</span>
+                                <span class="stat-value">2:15</span>
+                            </div>
+                        </div>
+                        <button class="btn-primary sport-details-btn" data-sport="swimming">View Details</button>
+                    </div>
+                    <div class="sport-card">
+                        <i class="fas fa-running"></i>
+                        <h3>Running</h3>
+                        <p>Level: Beginner</p>
+                        <div class="sport-stats">
+                            <div class="stat-item">
+                                <span class="stat-label">Runs</span>
+                                <span class="stat-value">12</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Distance</span>
+                                <span class="stat-value">85km</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Best Pace</span>
+                                <span class="stat-value">5:30/km</span>
+                            </div>
+                        </div>
+                        <button class="btn-primary sport-details-btn" data-sport="running">View Details</button>
+                    </div>
+                    <!-- Added cycling sport card -->
+                    <div class="sport-card">
+                        <i class="fas fa-bicycle"></i>
+                        <h3>Cycling</h3>
+                        <p>Level: Intermediate</p>
+                        <div class="sport-stats">
+                            <div class="stat-item">
+                                <span class="stat-label">Rides</span>
+                                <span class="stat-value">8</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Distance</span>
+                                <span class="stat-value">120km</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Best Speed</span>
+                                <span class="stat-value">35 km/h</span>
+                            </div>
+                        </div>
+                        <button class="btn-primary sport-details-btn" data-sport="cycling">View Details</button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="events" class="content-section">
+                <h2>Events & Tournaments</h2>
+                <div class="events-calendar">
+                    <div class="calendar-header">
+                        <button id="prevMonth">&lt;</button>
+                        <h3 id="currentMonth">March 2024</h3>
+                        <button id="nextMonth">&gt;</button>
+                    </div>
+                    <div class="calendar-grid" id="calendarGrid">
+                        <!-- Calendar will be generated by JavaScript -->
+                    </div>
+                </div>
+            </section>
+
+            <section id="news" class="content-section">
+                <h2>News & Updates</h2>
+                <div class="news-list">
+                    <article class="news-article">
+                        <h3>Training Tips for Better Performance</h3>
+                        <p>Learn the latest techniques to improve your athletic performance...</p>
+                        <button class="btn-secondary">Read More</button>
+                    </article>
+                </div>
+            </section>
+
+            <section id="performance" class="content-section">
+                <h2>Performance Statistics</h2>
+                <div class="stats-dashboard">
+                    <div class="performance-overview">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3>Training Hours</h3>
+                                <div class="stat-value" id="trainingHours">156</div>
+                                <p class="stat-period">This month</p>
+                                <div class="stat-change positive">+12% from last month</div>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-fire"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3>Calories Burned</h3>
+                                <div class="stat-value" id="caloriesBurned">12,450</div>
+                                <p class="stat-period">This week</p>
+                                <div class="stat-change positive">+8% from last week</div>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3>Personal Records</h3>
+                                <div class="stat-value" id="personalRecords">23</div>
+                                <p class="stat-period">All time</p>
+                                <div class="stat-change positive">+3 this month</div>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-heartbeat"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3>Avg Heart Rate</h3>
+                                <div class="stat-value" id="avgHeartRate">142</div>
+                                <p class="stat-period">BPM</p>
+                                <div class="stat-change neutral">Optimal range</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="performance-charts">
+                        <div class="chart-section">
+                            <h3>Weekly Performance Trends</h3>
+                            <div class="trends-container">
+                                <div class="trend-tabs">
+                                    <button class="trend-tab active" data-trend="training">Training Hours</button>
+                                    <button class="trend-tab" data-trend="calories">Calories</button>
+                                    <button class="trend-tab" data-trend="heartrate">Heart Rate</button>
+                                </div>
+                                <div class="trend-chart">
+                                    <div class="chart-header">
+                                        <span class="chart-period">Last 7 Days</span>
+                                        <span class="chart-total" id="weeklyTotal">32 hours</span>
+                                    </div>
+                                    <div class="weekly-bars" id="weeklyBars">
+                                        <div class="bar-item">
+                                            <div class="bar" style="height: 60%"></div>
+                                            <span class="bar-label">Mon</span>
+                                            <span class="bar-value">4.2h</span>
+                                        </div>
+                                        <div class="bar-item">
+                                            <div class="bar" style="height: 80%"></div>
+                                            <span class="bar-label">Tue</span>
+                                            <span class="bar-value">5.1h</span>
+                                        </div>
+                                        <div class="bar-item">
+                                            <div class="bar" style="height: 45%"></div>
+                                            <span class="bar-label">Wed</span>
+                                            <span class="bar-value">3.8h</span>
+                                        </div>
+                                        <div class="bar-item">
+                                            <div class="bar" style="height: 90%"></div>
+                                            <span class="bar-label">Thu</span>
+                                            <span class="bar-value">6.2h</span>
+                                        </div>
+                                        <div class="bar-item">
+                                            <div class="bar" style="height: 70%"></div>
+                                            <span class="bar-label">Fri</span>
+                                            <span class="bar-value">4.8h</span>
+                                        </div>
+                                        <div class="bar-item">
+                                            <div class="bar" style="height: 55%"></div>
+                                            <span class="bar-label">Sat</span>
+                                            <span class="bar-value">4.1h</span>
+                                        </div>
+                                        <div class="bar-item">
+                                            <div class="bar" style="height: 65%"></div>
+                                            <span class="bar-label">Sun</span>
+                                            <span class="bar-value">4.5h</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Enhanced sport distribution section with more details -->
+                        <div class="chart-section">
+                            <h3>Sport Distribution</h3>
+                            <div class="sport-distribution">
+                                <div class="sport-item">
+                                    <div class="sport-info">
+                                        <span class="sport-name">Basketball</span>
+                                        <span class="sport-hours">62.4h</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 40%"></div>
+                                    </div>
+                                    <span class="sport-percentage">40%</span>
+                                </div>
+                                <div class="sport-item">
+                                    <div class="sport-info">
+                                        <span class="sport-name">Swimming</span>
+                                        <span class="sport-hours">46.8h</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 30%"></div>
+                                    </div>
+                                    <span class="sport-percentage">30%</span>
+                                </div>
+                                <div class="sport-item">
+                                    <div class="sport-info">
+                                        <span class="sport-name">Running</span>
+                                        <span class="sport-hours">31.2h</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 20%"></div>
+                                    </div>
+                                    <span class="sport-percentage">20%</span>
+                                </div>
+                                <div class="sport-item">
+                                    <div class="sport-info">
+                                        <span class="sport-name">Cycling</span>
+                                        <span class="sport-hours">15.6h</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 10%"></div>
+                                    </div>
+                                    <span class="sport-percentage">10%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Added monthly comparison chart -->
+                        <div class="chart-section">
+                            <h3>Monthly Comparison</h3>
+                            <div class="monthly-comparison">
+                                <div class="comparison-item">
+                                    <div class="month-label">This Month</div>
+                                    <div class="month-stats">
+                                        <div class="stat">
+                                            <span class="stat-label">Hours</span>
+                                            <span class="stat-value">156</span>
+                                        </div>
+                                        <div class="stat">
+                                            <span class="stat-label">Sessions</span>
+                                            <span class="stat-value">42</span>
+                                        </div>
+                                        <div class="stat">
+                                            <span class="stat-label">Calories</span>
+                                            <span class="stat-value">12.4k</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="comparison-item">
+                                    <div class="month-label">Last Month</div>
+                                    <div class="month-stats">
+                                        <div class="stat">
+                                            <span class="stat-label">Hours</span>
+                                            <span class="stat-value">139</span>
+                                        </div>
+                                        <div class="stat">
+                                            <span class="stat-label">Sessions</span>
+                                            <span class="stat-value">38</span>
+                                        </div>
+                                        <div class="stat">
+                                            <span class="stat-label">Calories</span>
+                                            <span class="stat-value">11.5k</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="settings" class="content-section">
+                <h2>Settings</h2>
+                <div class="settings-container">
+                    <!-- Personal Information Section -->
+                    <div class="settings-section">
+                        <h3>Personal Information</h3>
+                        <div class="personal-info-card">
+                            <div class="info-item">
+                                <label>Full Name</label>
+                                <div class="info-display">
+                                    <span id="displayName">John Athlete</span>
+                                    <button class="edit-btn" data-field="name">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                </div>
+                                <div class="info-edit hidden" id="editName">
+                                    <input type="text" id="inputName" value="John Athlete">
+                                    <div class="edit-actions">
+                                        <button class="save-btn btn-primary" data-field="name">Save</button>
+                                        <button class="cancel-btn btn-secondary" data-field="name">Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="info-item">
+                                <label>Email Address</label>
+                                <div class="info-display">
+                                    <span id="displayEmail">john.athlete@email.com</span>
+                                    <button class="edit-btn" data-field="email">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                </div>
+                                <div class="info-edit hidden" id="editEmail">
+                                    <input type="email" id="inputEmail" value="john.athlete@email.com">
+                                    <div class="edit-actions">
+                                        <button class="save-btn btn-primary" data-field="email">Save</button>
+                                        <button class="cancel-btn btn-secondary" data-field="email">Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="info-item">
+                                <label>Phone Number</label>
+                                <div class="info-display">
+                                    <span id="displayPhone">+1 (555) 123-4567</span>
+                                    <button class="edit-btn" data-field="phone">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                </div>
+                                <div class="info-edit hidden" id="editPhone">
+                                    <input type="tel" id="inputPhone" value="+1 (555) 123-4567">
+                                    <div class="edit-actions">
+                                        <button class="save-btn btn-primary" data-field="phone">Save</button>
+                                        <button class="cancel-btn btn-secondary" data-field="phone">Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Security Settings Section -->
+                    <div class="settings-section">
+                        <h3>Security Settings</h3>
+                        <div class="security-card">
+                            <div class="security-item">
+                                <div class="security-info">
+                                    <h4>Change Password</h4>
+                                    <p>Update your password to keep your account secure</p>
+                                </div>
+                                <button class="btn-primary" id="passwordModalBtn">
+                                    <i class="fas fa-key"></i>
+                                    Change Password
+                                </button>
+                            </div>
+
+                            <div class="security-item">
+                                <div class="security-info">
+                                    <h4>Forgot Password</h4>
+                                    <p>Reset your password if you've forgotten it</p>
+                                </div>
+                                <button class="btn-secondary" id="forgotPasswordModalBtn">
+                                    <i class="fas fa-unlock-alt"></i>
+                                    Reset Password
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- General Settings Section -->
+                    <div class="settings-section">
+                        <h3>General Settings</h3>
+                        <div class="general-settings-card">
+                            <div class="setting-group">
+                                <label>Profile Name</label>
+                                <input type="text" id="profileName" value="Athlete">
+                            </div>
+                            <div class="setting-group">
+                                <label>Email Notifications</label>
+                                <input type="checkbox" id="emailNotifications" checked>
+                            </div>
+                            <div class="setting-group">
+                                <label>SMS Notifications</label>
+                                <input type="checkbox" id="smsNotifications">
+                            </div>
+                            <button class="btn-primary">Save Settings</button>
+                        </div>
+                    </div>
+
+                    <!-- Removed delete account section and kept only logout -->
+                    <div class="settings-section">
+                        <h3>Account Actions</h3>
+                        <div class="account-actions-card">
+                            <div class="action-item">
+                                <div class="action-info">
+                                    <h4>Logout</h4>
+                                    <p>Sign out of your account securely</p>
+                                </div>
+                                <button class="btn-danger" id="logoutBtn">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                    Logout
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Enhanced Event Details Modal -->
+    <div id="eventDetailsModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="eventDetailsTitle">Event Details</h3>
+                <span class="close" id="closeEventDetails">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div id="eventDetailsContent">
+                    <!-- Event details will be populated by JavaScript -->
+                </div>
+                <!-- Removed share and calendar buttons, kept only join -->
+                <div class="event-actions-modal">
+                    <button class="btn-primary join-modal-btn" id="joinEventFromModal">
+                        <i class="fas fa-plus-circle"></i>
+                        Join Event
+                    </button>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" id="closeEventDetailsBtn">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Password Change Modal -->
+    <div id="passwordModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Change Password</h3>
+                <span class="close" id="closePasswordModal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Current Password</label>
+                    <input type="password" id="currentPassword" placeholder="Enter current password">
+                </div>
+                <div class="form-group">
+                    <label>New Password</label>
+                    <input type="password" id="newPassword" placeholder="Enter new password">
+                </div>
+                <div class="form-group">
+                    <label>Confirm New Password</label>
+                    <input type="password" id="confirmPassword" placeholder="Confirm new password">
+                </div>
+                <div class="password-requirements">
+                    <p>Password must contain:</p>
+                    <ul>
+                        <li>At least 8 characters</li>
+                        <li>One uppercase letter</li>
+                        <li>One lowercase letter</li>
+                        <li>One number</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" id="closePasswordModalBtn">Cancel</button>
+                <button class="btn-primary" id="changePasswordBtn">Change Password</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Forgot Password Modal -->
+    <div id="forgotPasswordModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Reset Password</h3>
+                <span class="close" id="closeForgotPasswordModal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p>Enter your email address and we'll send you a link to reset your password.</p>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" id="resetEmail" placeholder="Enter your email address">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" id="closeForgotPasswordModalBtn">Cancel</button>
+                <button class="btn-primary" id="sendResetEmailBtn">Send Reset Link</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Unjoin Confirmation Modal -->
+    <div id="unjoinModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Confirm Unjoin</h3>
+                <span class="close" id="unjoinModalCancelBtn">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to unjoin this event?</p>
+                <p id="unjoinEventName" class="event-name"></p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" id="unjoinModalCancelBtn">Cancel</button>
+                <button class="btn-danger" id="unjoinModalConfirmBtn">Yes, Unjoin</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sport Details Modal -->
+    <div id="sportDetailsModal" class="modal">
+        <div class="modal-content sport-modal-content">
+            <div class="modal-header">
+                <h3 id="sportDetailsTitle">Sport Details</h3>
+                <span class="close" id="closeSportDetails">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div id="sportDetailsContent">
+                    <!-- Enhanced sport details content structure -->
+                    <div class="sport-overview">
+                        <div class="sport-icon-large">
+                            <i id="sportModalIcon" class="fas fa-basketball-ball"></i>
+                        </div>
+                        <div class="sport-basic-info">
+                            <h4 id="sportModalName">Basketball</h4>
+                            <p id="sportModalLevel">Level: Advanced</p>
+                            <div class="sport-badges">
+                                <span class="badge active">Active</span>
+                                <span class="badge favorite">Favorite</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sport-detailed-stats">
+                        <div class="stats-grid">
+                            <div class="detailed-stat">
+                                <div class="stat-icon">
+                                    <i class="fas fa-calendar-alt"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <span class="stat-label">Total Sessions</span>
+                                    <span class="stat-value" id="totalSessions">24</span>
+                                    <span class="stat-change">+3 this month</span>
+                                </div>
+                            </div>
+                            <div class="detailed-stat">
+                                <div class="stat-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <span class="stat-label">Total Hours</span>
+                                    <span class="stat-value" id="totalHours">62.4</span>
+                                    <span class="stat-change">+8.2h this month</span>
+                                </div>
+                            </div>
+                            <div class="detailed-stat">
+                                <div class="stat-icon">
+                                    <i class="fas fa-fire"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <span class="stat-label">Calories Burned</span>
+                                    <span class="stat-value" id="totalCalories">4,980</span>
+                                    <span class="stat-change">+420 this month</span>
+                                </div>
+                            </div>
+                            <div class="detailed-stat">
+                                <div class="stat-icon">
+                                    <i class="fas fa-trophy"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <span class="stat-label">Personal Bests</span>
+                                    <span class="stat-value" id="personalBests">8</span>
+                                    <span class="stat-change">+2 this month</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sport-achievements">
+                        <h5>Recent Achievements</h5>
+                        <div class="achievements-list" id="achievementsList">
+                            <div class="achievement-item">
+                                <i class="fas fa-medal achievement-icon"></i>
+                                <div class="achievement-info">
+                                    <span class="achievement-title">Season High Score</span>
+                                    <span class="achievement-desc">Scored 42 points in tournament</span>
+                                    <span class="achievement-date">2 days ago</span>
+                                </div>
+                            </div>
+                            <div class="achievement-item">
+                                <i class="fas fa-star achievement-icon"></i>
+                                <div class="achievement-info">
+                                    <span class="achievement-title">Consistency Streak</span>
+                                    <span class="achievement-desc">10 consecutive training sessions</span>
+                                    <span class="achievement-date">1 week ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sport-recent-activity">
+                        <h5>Recent Activity</h5>
+                        <div class="activity-timeline" id="activityTimeline">
+                            <div class="activity-item">
+                                <div class="activity-date">Today</div>
+                                <div class="activity-desc">Training session - 2.5 hours</div>
+                                <div class="activity-stats">210 calories burned</div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-date">Yesterday</div>
+                                <div class="activity-desc">Practice match - 1.8 hours</div>
+                                <div class="activity-stats">165 calories burned</div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-date">3 days ago</div>
+                                <div class="activity-desc">Tournament game - 2.2 hours</div>
+                                <div class="activity-stats">195 calories burned</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" id="closeSportDetailsBtn">Close</button>
+                <button class="btn-primary" id="viewFullStatsBtn">View Full Statistics</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="dashboard-script.js"></script>
+</body>
+
+</html>

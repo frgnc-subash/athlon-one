@@ -5,198 +5,197 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
-  <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="/components/membership/membership.css">
-  <title>Membership Plans | ATHLON ONE</title>
+  <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
+  <title>ATHLON-ONE | Membership</title>
+  <link rel="stylesheet" href="membership.css">
+  <link rel="stylesheet" href="/components/navbar/navBar.css">
 </head>
 
 <body>
-  <!-- Membership Header -->
-  <section class="membership-header">
-    <h1>Membership Plans</h1>
-    <p>Choose the plan that best fits your training needs.</p>
-  </section>
-
-  <!-- Pricing Section -->
-  <section class="pricing">
-    <div class="plan">
-      <h2>Basic</h2>
-      <p class="price">Rs.500 <span>/month</span></p>
-      <ul>
-        <li>✔ Unlimited reads</li>
-        <li>✔ Subscription-free articles</li>
-        <li>✔ Daily unique custom symbols</li>
-        <li>✔ More than 100 categories free</li>
-        <li>✔ Personal student support</li>
-      </ul>
-      <button class="choose-btn" data-plan="Basic">Choose</button>
-    </div>
-
-    <div class="plan popular">
-      <h2>Popular</h2>
-      <p class="price">Rs.1000 <span>/month</span></p>
-      <ul>
-        <li>✔ Copyright free material</li>
-        <li>✔ Custom public profile page</li>
-        <li>✔ "Pro" symbol near profile</li>
-        <li>✔ Adding extra rates to posts</li>
-        <li>✔ 5 free monthly "Basic" subs</li>
-        <li>+ Basic Plan</li>
-      </ul>
-      <button class="choose-btn" data-plan="Popular">Choose</button>
-    </div>
-
-    <div class="plan">
-      <h2>Agency</h2>
-      <p class="price">Rs.1500 <span>/month</span></p>
-      <ul>
-        <li>✔ VIP Newsletters</li>
-        <li>✔ Team public profile page</li>
-        <li>✔ Up to 5 members of your team</li>
-        <li>✔ Connection to other sub-teams</li>
-        <li>✔ Unlimited reviews</li>
-        <li>✔ Includes Basic & Popular plan</li>
-      </ul>
-      <button class="choose-btn" data-plan="Agency">Choose</button>
-    </div>
-  </section>
-
-  <!-- Popup Registration Form -->
-  <div id="formModal" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <h2>Register for Membership</h2>
-      <form id="registerForm" enctype="multipart/form-data">
-        <label for="plan">Selected Plan</label>
-        <input type="text" id="plan" name="plan" readonly>
-
-        <label for="name">Full Name</label>
-        <input type="text" id="name" name="name" required>
-
-        <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" name="phone">
-
-        <!-- Payment Method -->
-        <label for="payment">Payment Method</label>
-        <select id="payment" name="payment" required>
-          <option value="">-- Select --</option>
-          <option value="edigital">eSewa</option>
-          <option value="khalti">Khalti</option>
-          <option value="qr">BANK QR</option>
-          <option value="card">Dollar Card</option>
-        </select>
-
-        <!-- eSewa Payment -->
-        <div id="esewaField" class="payment-field">
-          <div class="payment-instructions">
-            <h3>Payment Instructions</h3>
-            <ol>
-              <li>Scan the QR code below using your eSewa app</li>
-              <li>Enter the amount according to your selected plan</li>
-              <li>Complete the payment</li>
-              <li>Upload a screenshot of the transaction confirmation</li>
-            </ol>
-          </div>
-          
-          <div class="qr-code">
-            <p>Scan this QR code with eSewa:</p>
-            <img src="/assets/esewa.jpg" alt="eSewa QR Code">
-          </div>
-          
-          <label for="esewaTxn">Transaction ID</label>
-          <input type="text" id="esewaTxn" name="esewaTxn" placeholder="Enter transaction ID"><br>
-          
-          <label for="esewaScreenshot">Upload Transaction Screenshot</label>
-          <input type="file" id="esewaScreenshot" name="esewaScreenshot" accept="image/*" required>
-        </div>
-
-        <!-- Khalti Payment -->
-        <div id="khaltiField" class="payment-field">
-          <div class="payment-instructions">
-            <h3>Payment Instructions</h3>
-            <ol>
-              <li>Scan the QR code below using your Khalti app</li>
-              <li>Enter the amount according to your selected plan</li>
-              <li>Complete the payment</li>
-              <li>Upload a screenshot of the transaction confirmation</li>
-            </ol>
-          </div>
-          
-          <div class="qr-code">
-            <p>Scan this QR code with Khalti:</p>
-            <img src="/assets/khalti.jpg" alt="Khalti QR Code">
-          </div>
-          
-          <label for="khaltiTxn">Transaction ID</label>
-          <input type="text" id="khaltiTxn" name="khaltiTxn" placeholder="Enter transaction ID"><br>
-          
-          <label for="khaltiScreenshot">Upload Transaction Screenshot</label>
-          <input type="file" id="khaltiScreenshot" name="khaltiScreenshot" accept="image/*" required>
-        </div>
-
-        <!-- BANK QR Payment -->
-        <div id="qrField" class="payment-field">
-          <div class="payment-instructions">
-            <h3>Payment Instructions</h3>
-            <ol>
-              <li>Use your banking app to scan the QR code below</li>
-              <li>Enter the amount according to your selected plan</li>
-              <li>Complete the payment</li>
-              <li>Upload a screenshot of the transaction confirmation</li>
-            </ol>
-          </div>
-          
-          <div class="qr-code">
-            <p>Scan this QR code with your banking app:</p>
-            <img src="/assets/bank.jpg" alt="Bank QR Code">
-          </div>
-          
-          <label for="bankTxn">Transaction ID</label>
-          <input type="text" id="bankTxn" name="bankTxn" placeholder="Enter transaction ID"><br>
-
-          <label for="bankScreenshot">Upload Transaction Screenshot</label>
-          <input type="file" id="bankScreenshot" name="bankScreenshot" accept="image/*" required>
-        </div>
-
-        <!-- Card Payment -->
-        <div id="cardField" class="payment-field">
-          <div class="payment-instructions">
-            <h3>Payment Instructions</h3>
-            <ol>
-              <li>Use the card details below to make payment</li>
-              <li>Enter the amount according to your selected plan</li>
-              <li>Complete the payment</li>
-              <li>Upload a screenshot of the transaction confirmation</li>
-            </ol>
-          </div>
-          
-          <div class="qr-code">
-            <p>Our Dollar Card Details:</p>
-            <div style="background: #1a1a1a; padding: 15px; border-radius: 8px; text-align: left; margin: 15px 0;">
-              <p><strong>Card Number:</strong> XXXX XXXX XXXX 1234</p>
-              <p><strong>Name:</strong> ATHLON ONE</p>
-              <p><strong>Expiry:</strong> 12/2025</p>
-              <p><strong>CVV:</strong> ***</p>
-            </div>
-          </div>
-          
-          <label for="cardTxn">Transaction ID</label>
-          <input type="text" id="cardTxn" name="cardTxn" placeholder="Enter transaction ID"><br>
-          
-          <label for="cardScreenshot">Upload Transaction Screenshot</label>
-          <input type="file" id="cardScreenshot" name="cardScreenshot" accept="image/*" required>
-        </div>
-
-        <button type="submit">Submit</button>
-      </form>
+  <div id="navbar-container"></div>
+  <div class="membership-hero">
+    <div class="hero-content">
+      <h1>ATHLON <span style="color: rgb(0, 255, 0)">MEMBERSHIP</span></h1>
+      <p>Choose the plan that fits your athletic journey and unlock your full potential.</p>
+      <a href="#plans" class="btn">View Plans</a>
     </div>
   </div>
+
+  <section class="membership-container" id="plans">
+    <h2 class="section-title">Membership <span>Plans</span></h2>
+    <p class="section-subtitle">Select the perfect plan for your fitness journey</p>
+
+    <div class="billing-toggle">
+      <span>Monthly</span>
+      <label class="toggle-switch">
+        <input type="checkbox" id="billingToggle">
+        <span class="slider"></span>
+      </label>
+      <span>Annual (Save 20%)</span>
+    </div>
+
+    <div class="plans-grid">
+      <!-- Basic Plan -->
+      <div class="plan-card">
+        <div class="plan-header">
+          <h3>Basic</h3>
+          <div class="price" data-monthly="$19.99" data-annual="$191.99">$19.99<span>/month</span></div>
+          <p>Perfect for beginners starting their fitness journey</p>
+        </div>
+        <div class="plan-features">
+          <ul>
+            <li><i class="fas fa-check"></i> Access to basic workout plans</li>
+            <li><i class="fas fa-check"></i> Progress tracking</li>
+            <li><i class="fas fa-check"></i> 3 workout sessions per week</li>
+            <li><i class="fas fa-times"></i> Live coaching sessions</li>
+            <li><i class="fas fa-times"></i> Nutrition planning</li>
+            <li><i class="fas fa-times"></i> Premium community access</li>
+          </ul>
+        </div>
+        <div class="plan-actions">
+          <button class="btn-plan">Get Started</button>
+        </div>
+      </div>
+
+      <!-- Pro Plan -->
+      <div class="plan-card featured">
+        <div class="plan-badge">Most Popular</div>
+        <div class="plan-header">
+          <h3>Pro</h3>
+          <div class="price" data-monthly="$39.99" data-annual="$383.99">$39.99<span>/month</span></div>
+          <p>For serious athletes committed to their goals</p>
+        </div>
+        <div class="plan-features">
+          <ul>
+            <li><i class="fas fa-check"></i> All Basic features</li>
+            <li><i class="fas fa-check"></i> Unlimited workout plans</li>
+            <li><i class="fas fa-check"></i> Daily workout sessions</li>
+            <li><i class="fas fa-check"></i> Weekly live coaching</li>
+            <li><i class="fas fa-check"></i> Custom nutrition planning</li>
+            <li><i class="fas fa-times"></i> 1-on-1 personal training</li>
+          </ul>
+        </div>
+        <div class="plan-actions">
+          <button class="btn-plan">Get Started</button>
+        </div>
+      </div>
+
+      <!-- Elite Plan -->
+      <div class="plan-card">
+        <div class="plan-header">
+          <h3>Elite</h3>
+          <div class="price" data-monthly="$79.99" data-annual="$767.99">$79.99<span>/month</span></div>
+          <p>For elite athletes who demand the best</p>
+        </div>
+        <div class="plan-features">
+          <ul>
+            <li><i class="fas fa-check"></i> All Pro features</li>
+            <li><i class="fas fa-check"></i> 1-on-1 personal training</li>
+            <li><i class="fas fa-check"></i> Custom workout programs</li>
+            <li><i class="fas fa-check"></i> Priority event registration</li>
+            <li><i class="fas fa-check"></i> Advanced analytics</li>
+            <li><i class="fas fa-check"></i> Exclusive athlete content</li>
+          </ul>
+        </div>
+        <div class="plan-actions">
+          <button class="btn-plan">Get Started</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features-section">
+    <div class="features-container">
+      <h2 class="section-title">Why Choose <span>ATHLON-ONE</span></h2>
+      <div class="features-grid">
+        <div class="feature-item">
+          <div class="feature-icon">
+            <i class="fas fa-dumbbell"></i>
+          </div>
+          <h3>Expert Training Plans</h3>
+          <p>Designed by professional athletes and coaches</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3>Progress Tracking</h3>
+          <p>Monitor your improvements with detailed analytics</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3>Community Support</h3>
+          <p>Connect with like-minded athletes worldwide</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <h3>Mobile Access</h3>
+          <p>Access your training anywhere, anytime</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <div class="faq-container">
+      <h2 class="section-title">Frequently Asked <span>Questions</span></h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>Can I change my plan later?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Yes, you can upgrade or downgrade your plan at any time. Changes will be reflected in your next billing
+              cycle.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>Do you offer a free trial?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>We offer a 7-day free trial for all new members. No credit card required to start your trial.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>What payment methods do you accept?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>We accept all major credit cards, PayPal, and bank transfers for your convenience.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>Can I cancel anytime?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Yes, you can cancel your subscription at any time with no cancellation fees.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="cta-container">
+      <h2>Ready to Transform Your Athletic Journey?</h2>
+      <p>Join thousands of athletes who have already elevated their performance with ATHLON-ONE.</p>
+      <a href="#" class="btn">Start Your Free Trial</a>
+    </div>
+  </section>
+
   <footer>
     <div class="footer-content">
       <div class="social-links">
@@ -206,18 +205,33 @@
         <a href="#"><i class="fab fa-youtube"></i></a>
       </div>
       <div class="footer-links">
-        <a href="#">Home</a>
+        <!-- <a href="/index.html">Home</a>
         <a href="#">Features</a>
-        <a href="#">Pricing</a>
+        <a href="/components/membership/membership.html">Membership</a>
         <a href="#">About</a>
-        <a href="#">Contact</a>
-        <a href="#">Events</a>
+        <a href="/components/contact/contact.html">Contact</a>
+        <a href="/components/events/events.html">Events</a> -->
         <a href="#">Privacy Policy</a>
         <a href="#">Terms of Service</a>
       </div>
       <p class="copyright">© 2023 ATHLON-ONE. All rights reserved.</p>
+      <div align="center"> Made with ❤️ by the ATHLON-ONE team </div>
     </div>
   </footer>
+  <script>
+    // Load navbar HTML
+    fetch("/components/navbar/navBar.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("navbar-container").innerHTML = data;
+
+        // Attach navbar highlight logic
+        const script = document.createElement("script");
+        script.src = "/components/navbar/navBar.js";
+        document.body.appendChild(script);
+      });
+  </script>
+  <script src="membership.js"></script>
 </body>
-<script src="/components/membership/membership.js"></script>
+
 </html>
