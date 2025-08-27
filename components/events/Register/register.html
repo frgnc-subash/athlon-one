@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,22 +8,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="/components/events/Register/register.css">
+    <link rel="stylesheet" href="/components/navbar/navBar.css">
     <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
 </head>
-<body>
-    <header id="mainHeader">
-        <div id="logo">
-            <img src="/assets/logo.png" alt="Sports Events Logo">
-        </div>
-        <nav class="nav-links">
-            <a href="#">Home</a>
-            <a href="#">Events</a>
-            <a href="#">Teams</a>
-            <a href="#">Results</a>
-            <a href="#">Contact</a>
-        </nav>
-    </header>
 
+<body>
+    <div id="navbar-container"></div>
     <section class="registration-hero">
         <h1>Register for Upcoming Sports</h1>
         <p>Join our community of athletes and participate in exciting matches and tournaments</p>
@@ -30,32 +21,32 @@
 
     <section class="registration-container">
         <h2 class="section-title">Registration <span>Form</span></h2>
-        
+
         <form class="registration-form">
             <div class="form-row">
                 <div class="form-group">
                     <label for="firstName">First Name</label>
                     <input type="text" id="firstName" name="firstName" required>
                 </div>
-                
+
                 <div class="form-group">
                     <label for="lastName">Last Name</label>
                     <input type="text" id="lastName" name="lastName" required>
                 </div>
             </div>
-            
+
             <div class="form-row">
                 <div class="form-group">
                     <label for="email">Email Address</label>
                     <input type="email" id="email" name="email" required>
                 </div>
-                
+
                 <div class="form-group">
                     <label for="phone">Phone Number</label>
                     <input type="tel" id="phone" name="phone" required>
                 </div>
             </div>
-            
+
             <div class="form-row">
                 <div class="form-group">
                     <label for="sport">Sport</label>
@@ -70,7 +61,7 @@
                         <option value="hockey">Hockey</option>
                     </select>
                 </div>
-                
+
                 <div class="form-group">
                     <label for="experience">Experience Level</label>
                     <select id="experience" name="experience" required>
@@ -82,22 +73,23 @@
                     </select>
                 </div>
             </div>
-            
+
             <div class="form-group">
                 <label for="team">Team Name (if applicable)</label>
                 <input type="text" id="team" name="team">
             </div>
-            
+
             <div class="form-group">
                 <label for="message">Additional Information</label>
                 <textarea id="message" name="message" rows="4"></textarea>
             </div>
-            
+
             <div class="checkbox-group">
                 <input type="checkbox" id="terms" name="terms" required>
-                <label for="terms">I agree to the <a href="#">terms and conditions</a> and <a href="#">privacy policy</a></label>
+                <label for="terms">I agree to the <a href="#">terms and conditions</a> and <a href="#">privacy
+                        policy</a></label>
             </div>
-            
+
             <button type="submit" class="btn-submit">Submit Registration</button>
         </form>
     </section>
@@ -121,6 +113,22 @@
             <p class="copyright">© 2023 Sports Events. All rights reserved.</p>
         </div>
     </footer>
+    <script>
+        // Load navbar HTML
+        fetch("/components/navbar/navBar.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("navbar-container").innerHTML = data;
+
+                // Load navbar JS after HTML is injected
+                const script = document.createElement("script");
+                script.src = "/components/navbar/navBar.js";
+                document.body.appendChild(script);
+            });
+    </script>
 </body>
-<script src="/components/events/Trending/trending.js"></script>
+<script src="/components/events/Trending/trending.js">
+
+</script>
+
 </html>

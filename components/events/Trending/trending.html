@@ -9,23 +9,12 @@
   <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="/global-css/style.css">
+  <link rel="stylesheet" href="/components/navbar/navBar.css">
   <link rel="stylesheet" href="/components/events/Trending/trending.css">
   <title>ATHLON-ONE | Trending Sports</title>
 </head>
 <body>
-    <header id="mainHeader">
-        <div id="logo">
-            <img src="/assets/logo.png" alt="ATHLON-ONE Logo">
-        </div>
-        <nav class="nav-links">
-            <a href="#">Home</a>
-            <a href="#">Events</a>
-            <a href="#" class="active">Trending</a>
-            <a href="#">Teams</a>
-            <a href="#">Results</a>
-        </nav>
-    </header>
-
+   <div id="navbar-container"></div>
     <section class="trending-hero">
         <h1 style="color: rgb(0, 255, 0);">Trending Sports</h1>
         <p>Discover the most popular sports and events that everyone is talking about</p>
@@ -244,7 +233,7 @@
     <section class="cta">
         <h2>Never Miss a Trend</h2>
         <p>Subscribe to our newsletter and stay updated with the latest trending sports and events</p>
-        <a href="#" class="btn">Subscribe Now</a>
+        <a href="/components/membership/membership.html" class="btn">Subscribe Now</a>
     </section>
 
     <footer>
@@ -266,7 +255,19 @@
             <p class="copyright">© 2023 Sports Hub. All rights reserved.</p>
         </div>
     </footer>
+<script>
+    // Load navbar HTML
+    fetch("/components/navbar/navBar.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("navbar-container").innerHTML = data;
 
+        // Load navbar JS after HTML is injected
+        const script = document.createElement("script");
+        script.src = "/components/navbar/navBar.js";
+        document.body.appendChild(script);
+      });
+  </script>
 </body>
 <script src="/components/events/Trending/trending.js"></script>
 </html>

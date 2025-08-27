@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
+  <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="membership.css">
+  <link rel="stylesheet" href="/components/navbar/navBar.css">
+  <title>Membership Plans | ATHLON ONE</title>
+</head>
+
+<body>
+  <!-- Membership Header -->
+  <div id="navbar-container"></div>
+  <section class="membership-header">
+    <h1>Membership Plans</h1>
+    <p>Choose the plan that best fits your training needs.</p>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="pricing">
+    <div class="plan">
+      <h2>Basic</h2>
+      <p class="price">Rs.500 <span>/month</span></p>
+      <ul>
+        <li>✔ Unlimited reads</li>
+        <li>✔ Subscription-free articles</li>
+        <li>✔ Daily unique custom symbols</li>
+        <li>✔ More than 100 categories free</li>
+        <li>✔ Personal student support</li>
+      </ul>
+      <button class="choose-btn" data-plan="Basic">Choose</button>
+    </div>
+
+    <div class="plan popular">
+      <h2>Popular</h2>
+      <p class="price">Rs.1000 <span>/month</span></p>
+      <ul>
+        <li>✔ Copyright free material</li>
+        <li>✔ Custom public profile page</li>
+        <li>✔ “Pro” symbol near profile</li>
+        <li>✔ Adding extra rates to posts</li>
+        <li>✔ 5 free monthly “Basic” subs</li>
+        <li>+ Basic Plan</li>
+      </ul>
+      <button class="choose-btn" data-plan="Popular">Choose</button>
+    </div>
+
+    <div class="plan">
+      <h2>Agency</h2>
+      <p class="price">Rs.1500 <span>/month</span></p>
+      <ul>
+        <li>✔ VIP Newsletters</li>
+        <li>✔ Team public profile page</li>
+        <li>✔ Up to 5 members of your team</li>
+        <li>✔ Connection to other sub-teams</li>
+        <li>✔ Unlimited reviews</li>
+        <li>✔ Includes Basic & Popular plan</li>
+      </ul>
+      <button class="choose-btn" data-plan="Agency">Choose</button>
+    </div>
+  </section>
+
+  <!-- Popup Registration Form -->
+  <div id="formModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Register for Membership</h2>
+      <form id="registerForm" enctype="multipart/form-data">
+        <label for="plan">Selected Plan</label>
+        <input type="text" id="plan" name="plan" readonly>
+
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone">
+
+        <!-- Payment Method -->
+        <label for="payment">Payment Method</label>
+        <select id="payment" name="payment" required>
+          <option value="">-- Select --</option>
+          <option value="edigital">eSewa </option>
+          <option value="khalti">Khalti</option>
+          <option value="qr">QR Upload</option>
+          <option value="card">Dollar Card</option>
+
+
+        </select>
+
+        <!--esewa-->
+        <div id="esewaField" class="payment-field">
+          <label for="esewaNumber">esewa Number</label>
+          <input type="text" id="esewaNumber" name="esewaNumber" placeholder="esewa Number"><br <label
+            for="esewaTxn">Transaction ID</label>
+          <input type="text" id="esewaTxn" name="esewaTxn" placeholder="Transaction ID"><br>
+
+          <label for="esewaAmount">Transaction Amount</label>
+          <input type="text" id="esewaAmount" name="esewaAmount" placeholder="Transaction Amount"><br>
+
+          <label for="esewaRem">Remarks</label>
+          <input type="text" id="esewaRem" name="esewaRem" placeholder="Remarks"><br>
+
+          <label for="esewaDate">Transaction Date</label>
+          <input type="date" id="esewaDate" name="esewaDate"><br>
+
+          <label for="confirmEsawa">Confirm Payment</label>
+          <input type="password" id="confirmEsawa" name="confirmEsawa" maxlength="4" placeholder="***">
+        </div>
+
+        <div id="khaltiField" class="payment-field">
+          <label for="khaltiNumber">Khalti Number</label>
+          <input type="text" id="khaltiNumber" name="khaltiNumber" placeholder="Khalti Number"><br>
+
+          <label for="khaltiTxn">Transaction ID</label>
+          <input type="text" id="khaltiTxn" name="khaltiTxn" placeholder="Transaction ID"><br>
+
+          <label for="khaltiAmount">Transaction Amount</label>
+          <input type="text" id="khaltiAmount" name="khaltiAmount" placeholder="Transaction Amount"><br>
+
+          <label for="khaltiRem">Remarks</label>
+          <input type="text" id="khaltiRem" name="khaltiRem" placeholder="Remarks"><br>
+
+          <label for="khaltiDate">Transaction Date</label>
+          <input type="date" id="khaltiDate" name="khaltiDate"><br>
+
+          <label for="confirmKhalti">Confirm Payment</label>
+          <input type="password" id="confirmKhalti" name="confirmKhalti" maxlength="4" placeholder="***">
+        </div>
+        <!-- QR Upload -->
+        <div id="qrField" class="payment-field">
+          <label for="qrUpload">Upload QR Code</label>
+          <input type="file" id="qrUpload" name="qrUpload" accept="image/*">
+        </div>
+
+        <!-- Card Payment -->
+        <div id="cardField" class="payment-field">
+          <label for="cardNumber">Card Number</label>
+          <input type="text" id="cardNumber" name="cardNumber" maxlength="16" placeholder="1234 5678 9012 3456"><br>
+
+          <label for="cardHolder">Card Holder Name</label>
+          <input type="text" id="cardHolder" name="cardHolder" placeholder="Card Holder Name"><br>
+
+          <label for="amount">Transaction Amount</label>
+          <input type="text" id="amount" name="amount" placeholder="Transaction Amount"><br>
+
+          <label for="remarks">Remarks</label>
+          <input type="text" id="remarks" name="remarks" placeholder="Remarks"><br>
+
+          <label for="cardType">Card Type</label>
+          <select id="cardType" name="cardType">
+            <option value="visa">Visa</option>
+            <option value="mastercard">MasterCard</option>
+            <option value="amex">American Express</option>
+          </select><br>
+
+          <label for="expiry">Expiry Date</label>
+          <input type="month" id="expiry" name="expiry"><br>
+
+          <label for="cvv">CVV</label>
+          <input type="password" id="cvv" name="cvv" maxlength="4" placeholder="***">
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+  <script>
+    fetch("/components/navbar/navBar.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("navbar-container").innerHTML = data;
+
+        // Attach navbar highlight logic
+        const script = document.createElement("script");
+        script.src = "/components/navbar/navBar.js";
+        document.body.appendChild(script);
+      });
+  </script>
+  <script src="membership.js"></script>
+</body>
+
+</html>
