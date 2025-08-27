@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,21 +10,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="/components/Gallery/gallery.css">
+    <link rel="stylesheet" href="/components/navbar/navBar.css">
     <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
 </head>
+
 <body>
-    <header id="mainHeader">
-        <div id="logo">
-            <img src="/assets/logo.png" alt="ATHLON ONE Logo">
-        </div>
-        <nav class="nav-links">
-            <a href="#">Home</a>
-            <a href="#">Events</a>
-            <a href="#">Trending</a>
-            <a href="#" class="active">Gallery</a>
-            <a href="#">Membership</a>
-        </nav>
-    </header>
+    <div id="navbar-container"></div>
 
     <section class="gallery-hero">
         <h1>Sports Gallery</h1>
@@ -32,7 +24,7 @@
 
     <section class="gallery-container">
         <h2 class="section-title">Sports <span>Gallery</span></h2>
-        
+
         <div class="gallery-filter">
             <button class="filter-btn active" data-filter="all">All Sports</button>
             <button class="filter-btn" data-filter="football">Football</button>
@@ -42,7 +34,7 @@
             <button class="filter-btn" data-filter="badminton">Badminton</button>
             <button class="filter-btn" data-filter="swimming">Swimming</button>
         </div>
-        
+
         <!-- Football Section -->
         <div class="sport-section" data-category="football">
             <div class="sport-header">
@@ -164,7 +156,7 @@
                 <a href="#" class="btn">View More Football Photos</a>
             </div>
         </div>
-        
+
         <!-- Basketball Section -->
         <div class="sport-section" data-category="basketball">
             <div class="sport-header">
@@ -265,7 +257,7 @@
                 <a href="#" class="btn">View More Basketball Photos</a>
             </div>
         </div>
-        
+
 
         <!-- Volleyball Section -->
         <div class="sport-section" data-category="volleyball">
@@ -360,13 +352,13 @@
                         <div class="image-desc">Winning Handshake </div>
                     </div>
                 </div>
-                
+
             </div>
             <div class="view-more">
                 <a href="#" class="btn">View More Volleyball Photos</a>
             </div>
         </div>
-        
+
         <!-- Cricket Section -->
         <div class="sport-section" data-category="cricket">
             <div class="sport-header">
@@ -466,7 +458,7 @@
                 <a href="#" class="btn">View More Cricket Photos</a>
             </div>
         </div>
-        
+
 
         <!-- Badminton Section -->
         <div class="sport-section" data-category="badminton">
@@ -548,7 +540,7 @@
                         <div class="image-desc">Flexible body </div>
                     </div>
                 </div>
-                    <div class="gallery-item">
+                <div class="gallery-item">
                     <img src="/assets/Gallery/ba11.jpg" alt="Badminton smash">
                     <div class="image-overlay">
                         <div class="image-title">Winning Celebration</div>
@@ -569,7 +561,7 @@
                 <a href="#" class="btn">View More Badminton Photos</a>
             </div>
         </div>
-        
+
         <!-- Swimming Section -->
         <div class="sport-section" data-category="swimming">
             <div class="sport-header">
@@ -681,18 +673,27 @@
                 <a href="#"><i class="fab fa-youtube"></i></a>
             </div>
             <div class="footer-links">
-                <a href="#">About Us</a>
-                <a href="#">Events Calendar</a>
-                <a href="#">FAQs</a>
-                <a href="#">Contact</a>
                 <a href="#">Privacy Policy</a>
                 <a href="#">Terms of Service</a>
             </div>
             <p class="copyright">© 2023 ATHLON ONE. All rights reserved.</p>
+            <div align="center"> Made with ❤️ by the ATHLON-ONE team </div>
         </div>
     </footer>
 
+    <script>
+        fetch("/components/navbar/navBar.html")
+            .then((response) => response.text())
+            .then((data) => {
+                document.getElementById("navbar-container").innerHTML = data;
+                // after inserting navbar, load navbar.js
+                const script = document.createElement("script");
+                script.src = "/components/navbar/navBar.js";
+                document.body.appendChild(script);
+            });
 
+    </script>
 </body>
 <script src="/components/Gallery/gallery.js"></script>
+
 </html>
