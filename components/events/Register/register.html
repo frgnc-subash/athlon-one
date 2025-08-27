@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register for Sports Events</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/components/events/Register/register.css">
+</head>
+<body>
+    <header id="mainHeader">
+        <div id="logo">
+            <img src="/assets/logo.png" alt="Sports Events Logo">
+        </div>
+        <nav class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">Events</a>
+            <a href="#">Teams</a>
+            <a href="#">Results</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <section class="registration-hero">
+        <h1>Register for Upcoming Sports</h1>
+        <p>Join our community of athletes and participate in exciting matches and tournaments</p>
+    </section>
+
+    <section class="registration-container">
+        <h2 class="section-title">Registration <span>Form</span></h2>
+        
+        <form class="registration-form">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="sport">Sport</label>
+                    <select id="sport" name="sport" required>
+                        <option value="">Select a sport</option>
+                        <option value="basketball">Basketball</option>
+                        <option value="football">Football</option>
+                        <option value="volleyball">Volleyball</option>
+                        <option value="tennis">Tennis</option>
+                        <option value="badminton">Badminton</option>
+                        <option value="cricket">Cricket</option>
+                        <option value="hockey">Hockey</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="experience">Experience Level</label>
+                    <select id="experience" name="experience" required>
+                        <option value="">Select your level</option>
+                        <option value="beginner">Beginner</option>
+                        <option value="intermediate">Intermediate</option>
+                        <option value="advanced">Advanced</option>
+                        <option value="professional">Professional</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="team">Team Name (if applicable)</label>
+                <input type="text" id="team" name="team">
+            </div>
+            
+            <div class="form-group">
+                <label for="message">Additional Information</label>
+                <textarea id="message" name="message" rows="4"></textarea>
+            </div>
+            
+            <div class="checkbox-group">
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">I agree to the <a href="#">terms and conditions</a> and <a href="#">privacy policy</a></label>
+            </div>
+            
+            <button type="submit" class="btn-submit">Submit Registration</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            <div class="footer-links">
+                <a href="#">About Us</a>
+                <a href="#">Events Calendar</a>
+                <a href="#">FAQs</a>
+                <a href="#">Contact</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+            <p class="copyright">© 2023 Sports Events. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+<script src="/components/events/Trending/trending.js"></script>
+</html>

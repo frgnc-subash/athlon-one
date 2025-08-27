@@ -29,22 +29,38 @@
 
     .nav-links {
       display: flex;
-      gap: 1.5rem;
+      gap: 2rem;
     }
 
     .nav-links a {
-      color: #f5f5f5;
+      color: #fff;
       text-decoration: none;
-      font-size: 1rem;
+      font-weight: 500;
       transition: color 0.3s;
+      position: relative;
     }
 
     .nav-links a:hover {
-      color: rgb(0, 255, 0);
+      color: #00ff00;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: #00ff00;
+      transition: width 0.3s;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
     }
 
     .events-hero {
-      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1530549387789-4c1017266635?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80');
+      background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/assets/sports.jpg');
       background-size: cover;
       background-position: center;
       padding: 100px 20px;
