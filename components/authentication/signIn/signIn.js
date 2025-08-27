@@ -131,7 +131,7 @@ socialBtns.forEach((btn) => {
     setTimeout(() => {
       showSuccessMessage(`${provider} login successful! Redirecting...`);
       setTimeout(() => {
-        window.location.href = "/components/dashboard/dashBoard.html";
+        window.location.href = "/components/dashboard/dashboard.html";
       }, 2000);
     }, 1500);
   });
