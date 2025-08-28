@@ -1,3 +1,146 @@
+// Create fullscreen viewer elements
+const fullscreenViewer = document.createElement('div');
+fullscreenViewer.className = 'fullscreen-viewer';
+fullscreenViewer.innerHTML = `
+    <div class="fullscreen-content">
+        <span class="close-btn">&times;</span>
+        <img src="" alt="Full screen image">
+        <div class="image-info">
+            <h3 class="fullscreen-title"></h3>
+            <p class="fullscreen-desc"></p>
+        </div>
+    </div>
+`;
+
+// Add to body
+document.body.appendChild(fullscreenViewer);
+
+// Add CSS for fullscreen viewer (injecting via JavaScript)
+const style = document.createElement('style');
+style.textContent = `
+    .fullscreen-viewer {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.95);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+    
+    .fullscreen-viewer.active {
+        display: flex;
+        opacity: 1;
+    }
+    
+    .fullscreen-content {
+        position: relative;
+        max-width: 90%;
+        max-height: 90%;
+    }
+    
+    .fullscreen-content img {
+        max-width: 100%;
+        max-height: 80vh;
+        object-fit: contain;
+        border-radius: 8px;
+    }
+    
+    .close-btn {
+        position: absolute;
+        top: -40px;
+        right: 0;
+        color: white;
+        font-size: 35px;
+        cursor: pointer;
+        transition: color 0.3s;
+    }
+    
+    .close-btn:hover {
+        color: #00ff00;
+    }
+    
+    .image-info {
+        color: white;
+        text-align: center;
+        margin-top: 15px;
+    }
+    
+    .fullscreen-title {
+        font-size: 1.5rem;
+        margin-bottom: 5px;
+    }
+    
+    @media (max-width: 768px) {
+        .fullscreen-content {
+            max-width: 95%;
+        }
+        
+        .close-btn {
+            top: -30px;
+            font-size: 30px;
+        }
+    }
+`;
+document.head.appendChild(style);
+
+// Add click event to all gallery items
+document.addEventListener('DOMContentLoaded', function() {
+    // Your existing code...
+    
+    // New code for fullscreen images
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    
+    galleryItems.forEach(item => {
+        item.addEventListener('click', function() {
+            const imgSrc = this.querySelector('img').src;
+            const title = this.querySelector('.image-title') ? this.querySelector('.image-title').textContent : '';
+            const desc = this.querySelector('.image-desc') ? this.querySelector('.image-desc').textContent : '';
+            
+            // Set content for fullscreen viewer
+            const fullscreenImg = fullscreenViewer.querySelector('img');
+            fullscreenImg.src = imgSrc;
+            fullscreenImg.alt = title;
+            
+            fullscreenViewer.querySelector('.fullscreen-title').textContent = title;
+            fullscreenViewer.querySelector('.fullscreen-desc').textContent = desc;
+            
+            // Show fullscreen viewer
+            fullscreenViewer.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        });
+    });
+    
+    // Close fullscreen viewer
+    const closeBtn = fullscreenViewer.querySelector('.close-btn');
+    closeBtn.addEventListener('click', function() {
+        fullscreenViewer.classList.remove('active');
+        document.body.style.overflow = ''; // Re-enable scrolling
+    });
+    
+    // Close when clicking outside image
+    fullscreenViewer.addEventListener('click', function(e) {
+        if (e.target === fullscreenViewer) {
+            fullscreenViewer.classList.remove('active');
+            document.body.style.overflow = ''; // Re-enable scrolling
+        }
+    });
+    
+    // Close with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && fullscreenViewer.classList.contains('active')) {
+            fullscreenViewer.classList.remove('active');
+            document.body.style.overflow = ''; // Re-enable scrolling
+        }
+    });
+    
+    // Your existing code continues...
+});
 document.addEventListener("DOMContentLoaded", function () {
   // Filter functionality
   const filterButtons = document.querySelectorAll(".filter-btn");
