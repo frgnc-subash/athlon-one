@@ -94,17 +94,17 @@ document.addEventListener("DOMContentLoaded", function () {
   // Payment method selection
   paymentMethods.forEach((method) => {
     method.addEventListener("click", function () {
-      // Remove active class from all methods
       paymentMethods.forEach((m) => m.classList.remove("active"));
-      // Add active class to clicked method
       this.classList.add("active");
 
-      // Show corresponding form
       const methodName = this.getAttribute("data-method");
       paymentForms.forEach((form) => {
-        form.classList.remove("active");
         if (form.id === `${methodName}Form`) {
           form.classList.add("active");
+          form.style.display = "block";
+        } else {
+          form.classList.remove("active");
+          form.style.display = "none";
         }
       });
     });
@@ -124,13 +124,6 @@ document.addEventListener("DOMContentLoaded", function () {
     .getElementById("submitBank")
     .addEventListener("click", processPayment);
 
-  // Success button
-  successButton.addEventListener("click", function () {
-    paymentModal.style.display = "none";
-    document.body.style.overflow = "auto";
-    resetForms();
-  });
-
   // Process payment function
   function processPayment(e) {
     e.preventDefault();
@@ -138,32 +131,41 @@ document.addEventListener("DOMContentLoaded", function () {
     // Hide all forms and show success message
     paymentForms.forEach((form) => (form.style.display = "none"));
     successSection.style.display = "block";
-
-    // In a real application, you would:
-    // 1. Validate form inputs
-    // 2. Send payment details to your server
-    // 3. Process payment through appropriate gateway
-    // 4. Handle success/error responses
   }
+
+  // Success button redirects to dashboard
+  successButton.addEventListener("click", function () {
+    paymentModal.style.display = "none";
+    document.body.style.overflow = "auto";
+    resetForms();
+    window.location.href = "/components/dashboard/dashboard.html";
+  });
 
   // Reset forms function
   function resetForms() {
-    paymentForms.forEach((form) => {
-      form.style.display = "none";
-    });
     successSection.style.display = "none";
 
-    // Reset payment method selection
+    paymentForms.forEach((form) => {
+      form.style.display = "none";
+      form.classList.remove("active");
+      form.querySelectorAll("input").forEach((input) => (input.value = ""));
+    });
+
     resetPaymentMethods();
   }
 
-  // Reset payment methods to default (card)
   function resetPaymentMethods() {
     paymentMethods.forEach((method) => method.classList.remove("active"));
     document.querySelector('[data-method="card"]').classList.add("active");
 
-    paymentForms.forEach((form) => form.classList.remove("active"));
-    document.getElementById("cardForm").classList.add("active");
+    paymentForms.forEach((form) => {
+      form.classList.remove("active");
+      form.style.display = "none";
+    });
+
+    const cardForm = document.getElementById("cardForm");
+    cardForm.classList.add("active");
+    cardForm.style.display = "block";
   }
 
   // Smooth scrolling for anchor links
