@@ -103,7 +103,7 @@ loginForm.addEventListener("submit", function (e) {
     }
 
     setTimeout(() => {
-      window.location.href = "../index.html";
+      window.location.href = "/components/dashboard/dashboard.html";
     }, 2000);
   }, 1500);
 });
