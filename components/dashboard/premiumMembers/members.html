@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
+    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/components/dashboard/premiumMembers/members.css">
+    <title>Athlon-One Premium Dashboard</title>
+    
+</head>
+
+<body>
+    <div class="container">
+        <!-- Overlay for mobile menu -->
+        <div class="overlay" id="overlay"></div>
+        
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="logo">
+                <h2><a href="/index.html"><span style="color: white">ATHLON</span> <span style="color: rgb(0, 225, 0);">ONE</span></a></h2>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#" class="active"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="#"><i class="fas fa-dumbbell"></i> Workouts</a></li>
+                <li><a href="#"><i class="fas fa-chart-line"></i> Progress</a></li>
+                <li><a href="#"><i class="fas fa-users"></i> Community</a></li>
+                <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+            </ul>
+
+            <div class="premium-section">
+                <h3>Premium Membership <span class="premium-badge">ACTIVE</span></h3>
+                <p>You have full access to all premium features.</p>
+                <button class="btn-premium" id="manage-premium-btn">Manage Subscription</button>
+            </div>
+
+            <div class="user-profile">
+                <img src="https://via.placeholder.com/40" alt="User Profile">
+                <div class="user-info">
+                    <h4>John Doe <span class="premium-badge">PREMIUM</span></h4>
+                    <p>Premium Account</p>
+                </div>
+                <a href="#" id="logout-btn"><i class="fas fa-sign-out-alt"></i></a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="header">
+                <div style="display: flex; align-items: center;">
+                    <button class="menu-toggle" id="menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h1>Premium Dashboard <span class="premium-badge">PRO</span></h1>
+                </div>
+                <div class="header-actions">
+                    <button class="btn" id="notifications-btn"><i class="fas fa-bell"></i></button>
+                    <button class="btn" id="settings-btn"><i class="fas fa-cog"></i></button>
+                </div>
+            </div>
+
+            <div class="dashboard-grid">
+                <!-- Stats Card -->
+                <div class="card premium-card">
+                    <h3>Your Stats <span class="premium-badge">PREMIUM</span></h3>
+                    <div class="stats-grid">
+                        <div class="stat-item premium-stat">
+                            <div class="stat-number">24</div>
+                            <div class="stat-label">Workouts</div>
+                        </div>
+                        <div class="stat-item premium-stat">
+                            <div class="stat-number">18</div>
+                            <div class="stat-label">Completed</div>
+                        </div>
+                        <div class="stat-item premium-stat">
+                            <div class="stat-number">97%</div>
+                            <div class="stat-label">Consistency</div>
+                        </div>
+                        <div class="stat-item premium-stat">
+                            <div class="stat-number">8</div>
+                            <div class="stat-label">Goals Achieved</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Workouts Card -->
+                <div class="card premium-card">
+                    <h3>Recent Workouts <span class="premium-badge">PREMIUM</span></h3>
+                    <ul class="workout-list">
+                        <li class="workout-item">
+                            <div>Upper Body Strength</div>
+                            <div>45 min</div>
+                        </li>
+                        <li class="workout-item">
+                            <div>Cardio Session</div>
+                            <div>30 min</div>
+                        </li>
+                        <li class="workout-item">
+                            <div>Leg Day</div>
+                            <div>60 min</div>
+                        </li>
+                        <li class="workout-item">
+                            <div>Yoga & Flexibility</div>
+                            <div>40 min</div>
+                        </li>
+                    </ul>
+                    <button class="btn" style="width: 100%; margin-top: 15px;">View All Workouts</button>
+                </div>
+
+                <!-- Progress Card -->
+                <div class="card premium-card">
+                    <h3>Monthly Progress <span class="premium-badge">PREMIUM</span></h3>
+                    <p>Strength Training</p>
+                    <div class="progress-bar premium-progress">
+                        <div class="progress-fill" style="width: 85%"></div>
+                    </div>
+                    <p>Cardio Fitness</p>
+                    <div class="progress-bar premium-progress">
+                        <div class="progress-fill" style="width: 75%"></div>
+                    </div>
+                    <p>Flexibility</p>
+                    <div class="progress-bar premium-progress">
+                        <div class="progress-fill" style="width: 65%"></div>
+                    </div>
+                    <p>Nutrition</p>
+                    <div class="progress-bar premium-progress">
+                        <div class="progress-fill" style="width: 90%"></div>
+                    </div>
+                </div>
+
+                <!-- Advanced Analytics Card (Now Unlocked) -->
+                <div class="card premium-feature premium-card">
+                    <div class="premium-badge">UNLOCKED</div>
+                    <h3>Advanced Analytics</h3>
+                    <p>Get detailed insights into your performance with our advanced tracking system.</p>
+                    <div class="premium-content">
+                        <div style="margin-top: 20px;">
+                            <h4>Your Performance Insights</h4>
+                            <ul class="workout-list">
+                                <li class="workout-item">
+                                    <div>Peak Performance Time</div>
+                                    <div>7:00 AM</div>
+                                </li>
+                                <li class="workout-item">
+                                    <div>Calories Burned This Week</div>
+                                    <div>3,450</div>
+                                </li>
+                                <li class="workout-item">
+                                    <div>Personal Records</div>
+                                    <div>12</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Personalized Coaching Card (Now Unlocked) -->
+                <div class="card premium-feature premium-card">
+                    <div class="premium-badge">UNLOCKED</div>
+                    <h3>Personalized Coaching</h3>
+                    <p>Get customized training plans from expert coaches tailored to your goals.</p>
+                    <div class="premium-content">
+                        <div style="margin-top: 20px;">
+                            <h4>Your Personal Coach: Sarah Johnson</h4>
+                            <p>Specialized in strength training and nutrition</p>
+                            <button class="btn" style="width: 100%; margin-top: 15px;">Message Coach</button>
+                            <button class="btn" style="width: 100%; margin-top: 10px;">Schedule Session</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Next Workout Card -->
+                <div class="card premium-card">
+                    <h3>Next Scheduled Workout <span class="premium-badge">PREMIUM</span></h3>
+                    <div style="text-align: center; padding: 20px 0;">
+                        <h2 style="color: var(--premium-color); margin-bottom: 10px;">Full Body Circuit</h2>
+                        <p>Tomorrow at 7:00 AM</p>
+                        <p>With your personal coach: Sarah</p>
+                        <button class="btn-premium" style="margin-top: 20px;">Start Workout</button>
+                    </div>
+                </div>
+
+                <!-- Exclusive Premium Content -->
+                <div class="card premium-card">
+                    <h3>Exclusive Content <span class="premium-badge">PREMIUM ONLY</span></h3>
+                    <div style="margin-top: 15px;">
+                        <h4>Advanced Workout Programs</h4>
+                        <ul class="workout-list">
+                            <li class="workout-item">
+                                <div>Elite Strength Program</div>
+                                <button class="btn">View</button>
+                            </li>
+                            <li class="workout-item">
+                                <div>Marathon Training</div>
+                                <button class="btn">View</button>
+                            </li>
+                            <li class="workout-item">
+                                <div>Yoga Mastery</div>
+                                <button class="btn">View</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+<script src="/components/dashboard/premiumMembers/members.js"></script>
+</html>

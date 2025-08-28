@@ -138,7 +138,7 @@ document.addEventListener("DOMContentLoaded", function () {
     paymentModal.style.display = "none";
     document.body.style.overflow = "auto";
     resetForms();
-    window.location.href = "/components/dashboard/dashboard.html";
+    window.location.href = "/components/dashboard/premiumMembers/members.html";
   });
 
   // Reset forms function
