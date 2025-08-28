@@ -81,7 +81,15 @@ body {
   color: #00ff00;
   text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
 }
-
+.logo a {
+  text-decoration: none;
+  color: inherit; /* keeps the button text color */
+  display: flex; /* ensures the span and icon stay aligned */
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+}
 .logo h1 {
   color: #ffffff;
   font-size: 2.2rem;
