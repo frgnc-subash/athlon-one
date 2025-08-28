@@ -70,7 +70,7 @@ header.scrolled #logo img {
 }
 
 .nav-links a.active::after {
-  width: 100%; /* keeps underline visible */
+  width: 100%; 
 }
 
 @keyframes pulse {
