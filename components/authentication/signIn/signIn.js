@@ -102,8 +102,17 @@ loginForm.addEventListener("submit", function (e) {
       localStorage.removeItem("userEmail");
     }
 
+    // Mark user as logged in
+    try {
+      localStorage.setItem("athlonIsLoggedIn", "true");
+    } catch(_) {}
+
     setTimeout(() => {
-      window.location.href = "/components/dashboard/dashboard.html";
+      // Redirect based on membership status
+      const isMember = localStorage.getItem("athlonIsMember") === "true";
+      window.location.href = isMember
+        ? "/components/dashboard/premiumMembers/members.html"
+        : "/components/dashboard/dashboard.html";
     }, 2000);
   }, 1500);
 });
@@ -131,7 +140,11 @@ socialBtns.forEach((btn) => {
     setTimeout(() => {
       showSuccessMessage(`${provider} login successful! Redirecting...`);
       setTimeout(() => {
-        window.location.href = "/components/dashboard/dashboard.html";
+        try { localStorage.setItem("athlonIsLoggedIn", "true"); } catch(_) {}
+        const isMember = localStorage.getItem("athlonIsMember") === "true";
+        window.location.href = isMember
+          ? "/components/dashboard/premiumMembers/members.html"
+          : "/components/dashboard/dashboard.html";
       }, 2000);
     }, 1500);
   });

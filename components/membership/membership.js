@@ -131,6 +131,13 @@ document.addEventListener("DOMContentLoaded", function () {
     // Hide all forms and show success message
     paymentForms.forEach((form) => (form.style.display = "none"));
     successSection.style.display = "block";
+
+    // Persist membership state so Navbar can reveal Dashboard
+    try {
+      const selectedPlanText = modalPlanName ? modalPlanName.textContent : "Pro Membership";
+      localStorage.setItem("athlonIsMember", "true");
+      localStorage.setItem("athlonMemberPlan", selectedPlanText || "Pro Membership");
+    } catch (_) {}
   }
 
   // Success button redirects to dashboard

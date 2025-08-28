@@ -30,6 +30,26 @@ window.addEventListener("scroll", function () {
   document.addEventListener("DOMContentLoaded", highlightActiveLink);
   highlightActiveLink();
   
+  // Conditionally show Dashboard link if user logged in; set href based on membership
+  function toggleDashboardLink() {
+    try {
+      const isLoggedIn = localStorage.getItem("athlonIsLoggedIn") === "true";
+      const isMember = localStorage.getItem("athlonIsMember") === "true";
+      const dashboardLink = document.getElementById("dashboardLink");
+      if (dashboardLink) {
+        dashboardLink.style.display = isLoggedIn ? "inline-block" : "none";
+        dashboardLink.setAttribute(
+          "href",
+          isMember
+            ? "/components/dashboard/premiumMembers/members.html"
+            : "/components/dashboard/dashboard.html"
+        );
+      }
+    } catch (_) {}
+  }
+  document.addEventListener("DOMContentLoaded", toggleDashboardLink);
+  toggleDashboardLink();
+  
   // Hamburger toggle for small screens
   function setupHamburger() {
     const hamburgerBtn = document.getElementById("hamburgerBtn");

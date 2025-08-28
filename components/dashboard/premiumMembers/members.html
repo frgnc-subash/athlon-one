@@ -10,7 +10,7 @@
     <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="/components/dashboard/premiumMembers/members.css">
-    <title>Athlon-One Premium Dashboard</title>
+    <title>ATHLON-ONE | Premium Dashboard</title>
     
 </head>
 
@@ -26,11 +26,11 @@
             </div>
 
             <ul class="nav-links">
-                <li><a href="#" class="active"><i class="fas fa-home"></i> Dashboard</a></li>
-                <li><a href="#"><i class="fas fa-dumbbell"></i> Workouts</a></li>
-                <li><a href="#"><i class="fas fa-chart-line"></i> Progress</a></li>
-                <li><a href="#"><i class="fas fa-users"></i> Community</a></li>
-                <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                <li><a href="#" data-section="dashboard" class="active"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="#" data-section="workouts"><i class="fas fa-dumbbell"></i> Workouts</a></li>
+                <li><a href="#" data-section="progress"><i class="fas fa-chart-line"></i> Progress</a></li>
+                <li><a href="#" data-section="community"><i class="fas fa-users"></i> Community</a></li>
+                <li><a href="#" data-section="settings"><i class="fas fa-cog"></i> Settings</a></li>
             </ul>
 
             <div class="premium-section">
@@ -40,12 +40,12 @@
             </div>
 
             <div class="user-profile">
-                <img src="https://via.placeholder.com/40" alt="User Profile">
+                <img src="/assets/user.png" alt="User Profile" style="background-color: white;">
                 <div class="user-info">
                     <h4>John Doe <span class="premium-badge">PREMIUM</span></h4>
                     <p>Premium Account</p>
                 </div>
-                <a href="#" id="logout-btn"><i class="fas fa-sign-out-alt"></i></a>
+                <button id="logout-btn" class="logout-btn" type="button">Log out</button>
             </div>
         </aside>
 
@@ -64,7 +64,7 @@
                 </div>
             </div>
 
-            <div class="dashboard-grid">
+            <section id="dashboard-section" class="dashboard-grid">
                 <!-- Stats Card -->
                 <div class="card premium-card">
                     <h3>Your Stats <span class="premium-badge">PREMIUM</span></h3>
@@ -187,7 +187,7 @@
 
                 <!-- Exclusive Premium Content -->
                 <div class="card premium-card">
-                    <h3>Exclusive Content <span class="premium-badge">PREMIUM ONLY</span></h3>
+                    <h3>Exclusive Content</h3>
                     <div style="margin-top: 15px;">
                         <h4>Advanced Workout Programs</h4>
                         <ul class="workout-list">
@@ -206,7 +206,95 @@
                         </ul>
                     </div>
                 </div>
-            </div>
+            </section>
+
+            <!-- Workouts Section (Premium) -->
+            <section id="workouts-section" class="dashboard-grid" style="display: none;">
+                <div class="card premium-card">
+                    <h3>Premium Workout Plans <span class="premium-badge">PREMIUM</span></h3>
+                    <ul class="workout-list">
+                        <li class="workout-item"><div>Elite Strength Program</div><button class="btn">View</button></li>
+                        <li class="workout-item"><div>Marathon Advanced Plan</div><button class="btn">View</button></li>
+                        <li class="workout-item"><div>Powerbuilding Hybrid</div><button class="btn">View</button></li>
+                        <li class="workout-item"><div>Yoga Mastery</div><button class="btn">View</button></li>
+                    </ul>
+                </div>
+                <div class="card premium-card">
+                    <h3>Coach Sessions</h3>
+                    <p>Schedule a session with your personal coach.</p>
+                    <button class="btn" id="schedule-coach-btn">Schedule Session</button>
+                </div>
+                <div class="card premium-card">
+                    <h3>Exclusive Videos</h3>
+                    <p>Access premium training videos and tutorials.</p>
+                    <button class="btn">Browse Library</button>
+                </div>
+            </section>
+
+            <!-- Progress Section (Premium) -->
+            <section id="progress-section" class="dashboard-grid" style="display: none;">
+                <div class="card premium-card">
+                    <h3>Detailed Analytics <span class="premium-badge">PRO</span></h3>
+                    <p>Strength</p><div class="progress-bar premium-progress"><div class="progress-fill" style="width: 85%"></div></div>
+                    <p>Cardio</p><div class="progress-bar premium-progress"><div class="progress-fill" style="width: 75%"></div></div>
+                    <p>Flexibility</p><div class="progress-bar premium-progress"><div class="progress-fill" style="width: 65%"></div></div>
+                    <p>Nutrition</p><div class="progress-bar premium-progress"><div class="progress-fill" style="width: 90%"></div></div>
+                </div>
+                <div class="card premium-card">
+                    <h3>Reports</h3>
+                    <p>Download comprehensive reports in CSV or PDF.</p>
+                    <button class="btn" id="export-premium-progress-btn">Export</button>
+                </div>
+                <div class="card premium-card">
+                    <h3>PR Tracker</h3>
+                    <ul class="workout-list">
+                        <li class="workout-item"><div>Deadlift</div><div>180 kg</div></li>
+                        <li class="workout-item"><div>Squat</div><div>150 kg</div></li>
+                        <li class="workout-item"><div>Bench</div><div>110 kg</div></li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Community Section (Premium) -->
+            <section id="community-section" class="dashboard-grid" style="display: none;">
+                <div class="card premium-card">
+                    <h3>Premium Groups</h3>
+                    <ul class="workout-list">
+                        <li class="workout-item"><div>Pro Runners</div><button class="btn">Join</button></li>
+                        <li class="workout-item"><div>Elite Strength</div><button class="btn">Join</button></li>
+                        <li class="workout-item"><div>Mind & Mobility</div><button class="btn">Join</button></li>
+                    </ul>
+                </div>
+                <div class="card premium-card">
+                    <h3>Coach Messages</h3>
+                    <p>Message your coach and get feedback.</p>
+                    <button class="btn" id="message-coach-btn">Message Coach</button>
+                </div>
+                <div class="card premium-card">
+                    <h3>Challenges</h3>
+                    <p>Join exclusive premium challenges.</p>
+                    <button class="btn">Join Challenge</button>
+                </div>
+            </section>
+
+            <!-- Settings Section (Premium) -->
+            <section id="settings-section" class="dashboard-grid" style="display: none;">
+                <div class="card premium-card">
+                    <h3>Subscription</h3>
+                    <p>Your plan: Pro (auto-renews monthly)</p>
+                    <button class="btn-premium" id="manage-premium-btn-settings">Manage Subscription</button>
+                </div>
+                <div class="card premium-card">
+                    <h3>Notifications</h3>
+                    <p>Manage push and email notifications.</p>
+                    <button class="btn">Manage</button>
+                </div>
+                <div class="card premium-card">
+                    <h3>Account</h3>
+                    <p>Email: john.doe@example.com</p>
+                    <button class="btn">Change Password</button>
+                </div>
+            </section>
         </main>
     </div>
 </body>

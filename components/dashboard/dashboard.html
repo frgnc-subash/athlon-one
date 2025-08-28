@@ -10,7 +10,7 @@
     <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="/components/dashboard/dashboard.css">
-    <title>Athlon-One Dashboard</title>
+    <title>ATHLON-ONE | Dashboard</title>
     
 </head>
 
@@ -26,11 +26,11 @@
             </div>
 
             <ul class="nav-links">
-                <li><a href="#" class="active"><i class="fas fa-home"></i> Dashboard</a></li>
-                <li><a href="#"><i class="fas fa-dumbbell"></i> Workouts</a></li>
-                <li><a href="#"><i class="fas fa-chart-line"></i> Progress</a></li>
-                <li><a href="#"><i class="fas fa-users"></i> Community</a></li>
-                <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                <li><a href="#" data-section="dashboard" class="active"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="#" data-section="workouts"><i class="fas fa-dumbbell"></i> Workouts</a></li>
+                <li><a href="#" data-section="progress"><i class="fas fa-chart-line"></i> Progress</a></li>
+                <li><a href="#" data-section="community"><i class="fas fa-users"></i> Community</a></li>
+                <li><a href="#" data-section="settings"><i class="fas fa-cog"></i> Settings</a></li>
             </ul>
 
             <div class="premium-section">
@@ -45,7 +45,7 @@
                     <h4>John Doe</h4>
                     <p>Free Account</p>
                 </div>
-                <a href="#" id="logout-btn"><i class="fas fa-sign-out-alt"></i></a>
+                <button id="logout-btn" class="logout-btn" type="button">Log out</button>
             </div>
         </aside>
 
@@ -64,7 +64,7 @@
                 </div>
             </div>
 
-            <div class="dashboard-grid">
+            <section id="dashboard-section" class="dashboard-grid">
                 <!-- Stats Card -->
                 <div class="card">
                     <h3>Your Stats</h3>
@@ -158,7 +158,100 @@
                         <button class="btn" style="margin-top: 20px;">Start Workout</button>
                     </div>
                 </div>
-            </div>
+            </section>
+
+            <!-- Workouts Section -->
+            <section id="workouts-section" class="dashboard-grid" style="display: none;">
+                <div class="card">
+                    <h3>Workout Plans</h3>
+                    <ul class="workout-list">
+                        <li class="workout-item"><div>Full Body Beginner</div><button class="btn">View</button></li>
+                        <li class="workout-item"><div>Strength Split (Upper/Lower)</div><button class="btn">View</button></li>
+                        <li class="workout-item"><div>HIIT Cardio Blast</div><button class="btn">View</button></li>
+                        <li class="workout-item"><div>Mobility & Flexibility</div><button class="btn">View</button></li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Recommended For You</h3>
+                    <p>Based on your recent activity, try the Upper Body Strength routine.</p>
+                    <button class="btn" id="start-recommended-btn">Start Now</button>
+                </div>
+                <div class="card">
+                    <h3>Schedule</h3>
+                    <p>Next: Full Body Circuit, Tomorrow 7:00 AM</p>
+                    <button class="btn" id="open-schedule-btn">Open Schedule</button>
+                </div>
+            </section>
+
+            <!-- Progress Section -->
+            <section id="progress-section" class="dashboard-grid" style="display: none;">
+                <div class="card">
+                    <h3>Monthly Progress</h3>
+                    <p>Strength</p>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 76%"></div></div>
+                    <p>Cardio</p>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 61%"></div></div>
+                    <p>Flexibility</p>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 43%"></div></div>
+                </div>
+                <div class="card">
+                    <h3>Achievements</h3>
+                    <ul class="workout-list">
+                        <li class="workout-item"><div>5K Personal Best</div><div>24:18</div></li>
+                        <li class="workout-item"><div>Bench Press PR</div><div>100 kg</div></li>
+                        <li class="workout-item"><div>Consistency Streak</div><div>14 days</div></li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Export Data</h3>
+                    <p>Download your progress report as CSV.</p>
+                    <button class="btn" id="export-progress-btn">Export</button>
+                </div>
+            </section>
+
+            <!-- Community Section -->
+            <section id="community-section" class="dashboard-grid" style="display: none;">
+                <div class="card">
+                    <h3>Community Feed</h3>
+                    <ul class="workout-list">
+                        <li class="workout-item"><div>Jane completed Leg Day</div><div>2h ago</div></li>
+                        <li class="workout-item"><div>Mark shared a new HIIT routine</div><div>5h ago</div></li>
+                        <li class="workout-item"><div>Priya hit a Deadlift PR</div><div>1d ago</div></li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Groups</h3>
+                    <ul class="workout-list">
+                        <li class="workout-item"><div>Morning Runners</div><button class="btn">Join</button></li>
+                        <li class="workout-item"><div>Strength Builders</div><button class="btn">Join</button></li>
+                        <li class="workout-item"><div>Yoga Flow</div><button class="btn">Join</button></li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Challenges</h3>
+                    <p>Join the 30-day push-up challenge!</p>
+                    <button class="btn">Join Challenge</button>
+                </div>
+            </section>
+
+            <!-- Settings Section -->
+            <section id="settings-section" class="dashboard-grid" style="display: none;">
+                <div class="card">
+                    <h3>Account</h3>
+                    <p>Email: john.doe@example.com</p>
+                    <button class="btn">Change Password</button>
+                </div>
+                <div class="card">
+                    <h3>Notifications</h3>
+                    <p>Manage push and email notifications.</p>
+                    <button class="btn">Manage</button>
+                </div>
+                <div class="card">
+                    <h3>Membership</h3>
+                    <p>Upgrade to unlock premium features.</p>
+                    <button class="btn-premium" id="upgrade-btn-settings">Upgrade</button>
+                </div>
+            </section>
         </main>
     </div>
 
