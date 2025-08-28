@@ -21,10 +21,9 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 4rem 2rem;
+  padding: 6rem 2rem 2rem;
   position: relative;
   overflow: hidden;
-  margin-top: 8%;
 }
 
 .contact-hero::before {
@@ -169,6 +168,11 @@ body {
 .form-group textarea {
   min-height: 150px;
   resize: vertical;
+}
+
+/* Prevent dragging/resizing of message boxes */
+.form-group textarea {
+  resize: none;
 }
 
 .submit-btn {
@@ -353,6 +357,9 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .contact-hero {
+    padding-top: 7rem;
+  }
   header {
     flex-direction: column;
     padding: 1rem;

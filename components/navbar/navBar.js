@@ -29,4 +29,34 @@ window.addEventListener("scroll", function () {
   // Safe init (works even if loaded dynamically)
   document.addEventListener("DOMContentLoaded", highlightActiveLink);
   highlightActiveLink();
+  
+  // Hamburger toggle for small screens
+  function setupHamburger() {
+    const hamburgerBtn = document.getElementById("hamburgerBtn");
+    if (!hamburgerBtn || !header) return;
+
+    function toggleMenu() {
+      const isExpanded = hamburgerBtn.getAttribute("aria-expanded") === "true";
+      const next = String(!isExpanded);
+      hamburgerBtn.setAttribute("aria-expanded", next);
+      if (next === "true") {
+        header.classList.add("menu-open");
+      } else {
+        header.classList.remove("menu-open");
+      }
+    }
+
+    hamburgerBtn.addEventListener("click", toggleMenu);
+
+    // Close menu when resizing to large screens
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 768 && header.classList.contains("menu-open")) {
+        header.classList.remove("menu-open");
+        hamburgerBtn.setAttribute("aria-expanded", "false");
+      }
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", setupHamburger);
+  setupHamburger();
 })();

@@ -37,15 +37,17 @@ const observer = new IntersectionObserver(
 
 observer.observe(document.querySelector(".stats"));
 
-const header = document.getElementById("mainHeader");
-
-window.addEventListener("scroll", function () {
-  if (window.scrollY > 50) {
-    header.classList.add("scrolled");
-  } else {
-    header.classList.remove("scrolled");
-  }
-});
+function attachHeaderScrollListener() {
+  const headerEl = document.getElementById("mainHeader");
+  if (!headerEl) return;
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 50) {
+      headerEl.classList.add("scrolled");
+    } else {
+      headerEl.classList.remove("scrolled");
+    }
+  });
+}
 
 // dynamic navbar
 fetch("/components/navbar/navBar.html")
@@ -56,4 +58,23 @@ fetch("/components/navbar/navBar.html")
     const script = document.createElement("script");
     script.src = "/components/navbar/navBar.js";
     document.body.appendChild(script);
+    attachHeaderScrollListener();
   });
+
+// Fade out preloader once page is loaded/rendered
+window.addEventListener("load", function () {
+  const preloader = document.getElementById("preloader");
+  if (!preloader) return;
+  // small delay to ensure smooth transition
+  setTimeout(function () {
+    preloader.classList.add("hidden");
+    // remove from DOM after transition to free memory and re-enable scroll
+    setTimeout(function () {
+      if (preloader && preloader.parentNode) {
+        preloader.parentNode.removeChild(preloader);
+      }
+      document.documentElement.style.overflowY = "";
+      document.body.style.overflowY = "";
+    }, 600);
+  }, 200);
+});

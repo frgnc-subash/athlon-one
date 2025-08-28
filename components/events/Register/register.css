@@ -80,6 +80,10 @@ body {
     transition: border-color 0.3s, box-shadow 0.3s;
 }
 
+.form-group textarea {
+    resize: none;
+}
+
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {

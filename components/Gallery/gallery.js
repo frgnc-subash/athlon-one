@@ -158,6 +158,20 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  function setViewMoreVisibility(section, shouldShow) {
+    const viewMore = section.querySelector('.view-more');
+    if (!viewMore) return;
+    viewMore.style.display = shouldShow ? 'block' : 'none';
+  }
+
+  function refreshViewMoreLimitedState() {
+    sportSections.forEach((section) => {
+      const images = section.querySelectorAll('.gallery-item');
+      // Show button only when there are more than 6 images total
+      setViewMoreVisibility(section, images.length > 6);
+    });
+  }
+
   // Function to show limited images (6 per section)
   function showLimitedImages() {
     sportSections.forEach((section) => {
@@ -169,6 +183,8 @@ document.addEventListener("DOMContentLoaded", function () {
           img.style.display = "none";
         }
       });
+      // We are limiting items, so show View More if there are more items
+      setViewMoreVisibility(section, images.length > 6);
     });
   }
 
@@ -178,6 +194,8 @@ document.addEventListener("DOMContentLoaded", function () {
     images.forEach((img) => {
       img.style.display = "block";
     });
+    // All images are visible for this section; hide its View More button
+    setViewMoreVisibility(section, false);
   }
 
   // Initialize page with limited images
@@ -200,6 +218,7 @@ document.addEventListener("DOMContentLoaded", function () {
           section.style.display = "block";
         });
         showLimitedImages();
+        refreshViewMoreLimitedState();
         return;
       }
 
@@ -210,6 +229,8 @@ document.addEventListener("DOMContentLoaded", function () {
         if (category === filterValue) {
           section.style.display = "block";
           showAllImages(section); // Show all images for the selected sport
+          // Hide View More for the selected category since everything is visible
+          setViewMoreVisibility(section, false);
         } else {
           section.style.display = "none";
         }
@@ -225,6 +246,9 @@ document.addEventListener("DOMContentLoaded", function () {
       // Find the parent sport section
       const sportSection = button.closest(".sport-section");
       const category = sportSection.getAttribute("data-category");
+
+      // Hide the button immediately to avoid flicker
+      setViewMoreVisibility(sportSection, false);
 
       // Find and click the corresponding filter button
       const correspondingFilterButton = document.querySelector(

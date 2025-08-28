@@ -12,6 +12,22 @@ body {
   overflow-x: hidden;
 }
 
+/* Global responsive media */
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+iframe {
+  max-width: 100%;
+}
+
+/* Prevent scroll while preloader is visible */
+html:has(.preloader):not(:has(.preloader.hidden)),
+body:has(.preloader):not(:has(.preloader.hidden)) {
+  overflow: hidden;
+}
+
 /* Sticky Header Styles */
 header {
   display: flex;
@@ -408,4 +424,56 @@ footer {
     flex-direction: column;
     gap: 0.5rem;
   }
+}
+
+/* Preloader */
+.preloader {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(1200px 600px at 50% 40%, rgba(0,255,0,0.08), transparent 60%)
+    , #0a0a0a;
+  z-index: 2000;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.preloader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.preloader-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.preloader-logo {
+  width: 72px;
+  height: auto;
+  filter: drop-shadow(0 0 10px rgba(0,255,0,0.6));
+  animation: pulse 2.5s infinite;
+}
+
+.preloader-spinner {
+  width: 52px;
+  height: 52px;
+  border: 3px solid rgba(0,255,0,0.25);
+  border-top-color: #00ff00;
+  border-radius: 50%;
+  animation: spin 0.9s linear infinite;
+  box-shadow: 0 0 15px rgba(0,255,0,0.25);
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .preloader-logo { animation: none; }
+  .preloader-spinner { animation: none; }
+  .preloader { transition: none; }
 }
