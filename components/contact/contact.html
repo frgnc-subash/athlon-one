@@ -188,6 +188,16 @@
             <div align="center"> Made with ❤️ by the ATHLON-ONE team </div>
         </div>
     </footer>
+    <script>fetch("/components/navbar/navBar.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("navbar-container").innerHTML = data;
+
+                // Attach navbar highlight logic
+                const script = document.createElement("script");
+                script.src = "/components/navbar/navBar.js";
+                document.body.appendChild(script);
+            });</script>
     <script src="contact.js"></script>
 </body>
 

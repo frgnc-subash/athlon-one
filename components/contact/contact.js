@@ -37,13 +37,3 @@ document.querySelectorAll(".faq-question").forEach((question) => {
   });
 });
 
-fetch("/components/navbar/navBar.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("navbar-container").innerHTML = data;
-
-      // Attach navbar highlight logic
-      const script = document.createElement("script");
-      script.src = "/components/navbar/navBar.js";
-      document.body.appendChild(script);
-    });
